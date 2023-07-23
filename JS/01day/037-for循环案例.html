@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.求1-100之间的所有书的平均值
+        var sum=0;
+        var average=0;
+        for(var i=0;i<100;i++)
+        {
+            sum+=i;
+        }
+        average=sum/100;
+        console.log('求1-100之间的所有书的平均值为'+average);
+        // 求1-100之间的偶数和还有奇数和
+        var even=0;
+        var add=0;
+        for(var i=0;i<=100;i++)
+        {
+            if(i%2==0)
+            {
+                even+=i;
+            }
+            else
+            {
+                add+=i;
+            }
+        }
+        console.log('求1-100之间的偶数和为'+even);
+        console.log('求1-100之间的奇数和为'+add);
+        // 求1-100之间可以被3整除的数的和
+        var sum1=0;
+        for(var i=0;i<=100;i++)
+        {
+            if(i%3==0)
+            {
+                sum1+=i;
+            }
+        }
+        console.log('1-100之间可以被3整除的数的和为'+sum1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

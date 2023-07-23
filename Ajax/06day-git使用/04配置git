@@ -1,0 +1,14 @@
+1.下载之后就是配置用户信息  配置一次永久生效
+git config --global user.name "随便写个"
+git config --global user.email "随便写个"
+
+2.检查配置信息
+git config --list --global  //所有的配置信息显示出来
+git config user.name  //单独显示
+git config user.email
+
+3.使用帮助手册在浏览器h中显示
+git help config
+4.在终端显示帮助手册 更加的简洁
+git config -h
+

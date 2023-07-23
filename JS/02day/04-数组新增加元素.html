@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.通过修改length的长度来实现扩容的目的
+        var arr = [1, 2, 3, 4, 'ttt'];
+        console.log(arr.length);
+        arr.length = 10;//数组扩容之后没有赋值的元素默认为undefined
+        console.log(arr);
+
+        // 2.通过修改数组的索引的方式追加数组元素
+        var arr1 = [1, 2, 3, 4, 'ttt'];
+        arr1[5]='ggg';
+        console.log(arr1);
+
+        arr1[1]='blank';//这里是会替换原来的元素 数组的长度不会变长
+        console.log(arr1);
+
+        arr1='xixihaha';
+        console.log(arr1);//不要直接给数组名称赋值 不然数组元素就全部都被覆盖掉了
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

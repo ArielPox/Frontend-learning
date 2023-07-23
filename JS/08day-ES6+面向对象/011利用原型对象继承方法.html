@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.父构造函数
+        function Father(uname, age) {
+            // 这里的this指向的是父构造函数实例化的对象
+            this.uname = uname;
+            this.age = age;
+        }
+        Father.prototype.money = function() {
+
+            console.log("这是父原型对象的的方法");
+        }
+
+        // 2.子构造函数
+        function Son(uname, age, score) {
+            // 这里的this指向的是子构造函数的实例化对象
+            // 使用call来将Father的this指向Son的this son从而会继承Father的属性还有方法
+            Father.call(this, uname, age);
+            this.score = score;
+        }
+
+        // 原型对象的继承
+        Son.prototype = new Father();
+        // 如果利用对象的形式修改了原型对象，需要利用constructor指回原来的原型对象
+        Son.prototype.constructor = Son;
+
+        // 给Son原型对象里面添加一个新的方法
+        Son.prototype.exam = function() {
+            console.log("这是子原型对象的方法")
+        }
+
+
+        var ldh = new Son("刘德华", 12, 22);
+        console.log(ldh);
+
+        // Father原型对象里面的值没有被修改
+        console.log(Father.prototype);
+
+        // Son继承了father的原型对象的方法 加上自己的方法属性
+        console.log(Son.prototype);
+
+        // 3.误区：Son.prototype = Father.prototype;这样的赋值会有问题，因为Son直接赋值继承的就是Father的原型对象的地址 只要更改Son的话 Father的原型对象也会被更改
+    </script>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        /* 1.超小屏幕 就是小于767px的情况下 */
+        @media screen and (max-width:767px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        /* 2.小屏幕 大于等于768 布局容器改为750 */
+        @media screen and (m-width:768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        /* 3.中等的屏幕下 992px 布局容器改为970px */
+        @media screen and (max-width:992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        /* 4.大屏幕下 大于等于1200px 布局容器修改为1170px */
+        @media screen and (max-width:1200x) {
+            .container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+<!-- 使用媒体查询针对不同的宽度的设备进行布局还有样式的设置 从而适配不同的设备的目的 -->
+<!-- 需要一个父级作为布局的容器 来配合子级元素来实现结果 
+响应式的尺寸的划分 超级小屏幕 小屏幕 中等屏幕 大屏幕-->
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>

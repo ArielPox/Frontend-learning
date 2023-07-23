@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 语法
+        /*    // // 在正则表表达式里面（）就表示一个分组
+           // let str = '<div>我是{{name}}</div>';
+           // console.log(str);
+           // // 通过下面的分组提取到自己的想要的内容，下面的+表示的是出现一次及以上
+           // let pattern = /{{([a-zA-Z]+)}}/;
+           // let result = pattern.exec(str);
+
+           // // 将索引为0的数替换成索引为1 的数
+           // str = str.replace(result[0], result[1]);
+           // console.log(str);
+
+           // 多次的replace 单独表示*/
+        /*      // 在正则表表达式里面（）就表示一个分组
+             let str = '<div>{{name}}是{{age}}岁</div>';
+             // 通过下面的分组提取到自己的想要的内容
+             let pattern = /{{\s*([a-zA-Z]+)\s*}}/;
+
+             //第一次的匹配
+             let result1 = pattern.exec(str);
+             str = str.replace(result1[0], result1[1]);
+             console.log(str);
+
+             //第二次的匹配
+             let result2 = pattern.exec(str);
+             str = str.replace(result2[0], result2[1]);
+             console.log(str);
+
+             //第三次的匹配 没有可以匹配的内容就返回的是null
+             let result3 = pattern.exec(str);
+             console.log(result3); */
+
+
+        //    使用循环实现多次的提取
+        let str = '<div>{{name}}是{{age}}岁</div>';
+        // 通过下面的分组提取到自己的想要的内容
+        let pattern = /{{\s*([a-zA-Z]+)\s*}}/;
+
+        let patternResult = null;
+        // 每次只可以提取到一个分组 所以要循环提取
+        while (patternResult = pattern.exec(str)) {
+            console.log(patternResult);
+            str = str.replace(patternResult[0], patternResult[1]);
+        }
+
+        console.log(str);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        section div:nth-child(1) {
+            height: 50px;
+            width: 50px;
+            background-color: skyblue;
+        }
+
+        /* （1）属性一：flex 定义子项分配剩余的空间 用flex来表示份数*/
+
+        section div:nth-child(2) {
+            height: 50px;
+            background-color: green;
+            margin: 0 5px 0 5px;
+            flex: 1;
+            
+        /* (3)属性三order 数字越小 排列就越靠前 默认为0 */
+        order: -1;
+        }
+
+        /*(2)属性二 align-self 可以控制单独的一个子项在侧轴上面的对齐方式 默认值为auto 表示继承父元素的属性 假如没有父元素 那么等同于stretch */
+        section div:nth-child(3) {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(194, 102, 219);
+            align-self: flex-end;
+            /* align-self: center; */
+            /* align-self: flex-start; */
+        }
+
+        p {
+            display: flex;
+            width: 60%;
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        p span {
+            flex: 1;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <p>
+        <span>1</span>
+        <span style="flex: 2; background-color: aqua;">2</span>
+        <span>3</span>
+    </p>
+</body>
+
+</html>

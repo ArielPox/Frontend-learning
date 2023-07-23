@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 57px;
+            height: 57px;
+            background-color: green;
+            background: url(images/jlt.png);/* 引入精灵图 */
+            /* 将图片移动到制定的位置 */
+            background-position: 220px 0;
+        }
+    </style>
+</head>
+<!-- 为了有效的减少服务器接受和发送请求的次数 提高页面的加载速度 
+主要就是针对于小的背景图片的将他合在一张大图片中-->
+<body>
+    <div class="box1"></div>
+    
+</body>
+</html>

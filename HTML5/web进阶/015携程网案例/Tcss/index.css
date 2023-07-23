@@ -1,0 +1,273 @@
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    color: #000;
+    /* overflow: hidden; 在body中加入之后 页面就无法滑动*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: none;
+    background: #f4f4f4;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+div{
+    box-sizing: border-box;
+}
+/* 顶部搜索部分 */
+.search-index{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 540px;
+    min-width: 320px;
+    width: 100%;
+    height: 44px;
+    background-color: #F6F6F6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 2px ;
+    font-size: 12px;
+    color: #666;
+    padding-left: 25px;
+    margin-top: 5px;
+    line-height: 28px;
+    /* 影子 水平 垂直 模糊 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.search::before{
+    content: "";
+    position: absolute;
+    top: 5px; 
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../Timages/suo.png) no-repeat -75px 1px;
+    background-size: 186px auto;
+}
+
+/* 焦点图部分 */
+.focus{
+    margin-top: 44px;
+}
+
+.focus img{
+    width: 100%;
+}
+
+/* 导航栏部分 */
+.local-nav{
+    /* 流式布局只可以是相邻关系的父子关系的用display：flex */
+    display: flex;
+    height: 64px;
+    background-color:#fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+.local-nav li{
+    flex: auto;
+}
+
+.local-nav a{
+    display: flex;
+    /* 侧轴居中对齐 */
+    flex-direction: column;
+    align-items: center;
+}
+.local-nav-icon{
+width: 32px;
+height: 32px;
+background-color:#fff;
+margin-top: 8px;
+
+}
+
+
+.local-nav span{
+    font-size: 14px;
+    color: rgb(115, 114, 114);
+}
+
+/* 主导航栏部分 */
+nav{
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 4px 3px;
+}
+
+.nav-common{
+    display: flex;
+    height: 88px;
+    background-color: green;
+}
+.nav-common:nth-child(1){
+background: -webkit-linear-gradient(left,#FA5A55,#FA994D);
+}
+.nav-common:nth-child(2){
+    background: -webkit-linear-gradient(left,#70fa55,#4dfae3);
+}
+
+.nav-common:nth-child(3){
+    background: -webkit-linear-gradient(left,#fa55c8,#4dfa98);
+}
+
+.nav-common:nth-child(2)
+{
+    margin: 2px 0;
+}
+
+
+.nav-items{
+    /* 对于父类来说 */
+    flex: 1;
+    /* 对于子类来说 */
+    display: flex;
+    /* 设置主轴方向为y轴 */
+    flex-direction: column;
+}
+
+.nav-items a{
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    font-size: 14px;
+    color: #fff;
+    /* 文字阴影 */
+    text-shadow: 1px 1px rgba(0,0,0,.2);
+}
+.nav-items a:nth-child(1)
+{
+    border-bottom: 1px solid #fff;
+}
+.nav-items:nth-child(1) a
+{
+    border: 0;
+    text-align: center;
+    line-height: 88px;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+.nav-items:nth-child(-n+2)
+{
+    border-right:1px solid #fff;
+}
+
+/* 侧导航栏 */
+.subnav-entry{
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.subnav-entry li{
+
+    flex: 20%;
+}
+.subnav-entry a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #ccc;
+}
+.subnav-entry .subnav-entry-icon{
+    height: 28px;
+    width: 28px;
+    background-color: pink;
+    margin-top: 4px;
+}
+/* 热门模块制作 */
+.sales-box{
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.sales-hd{
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid rgb(240, 174, 174);
+}
+.sales-hd h2{
+    position: relative;
+    /* 将文字隐藏 */
+    text-indent: -999px;
+    overflow: hidden;
+}
+.sales-hd h2::after{
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    content: "";
+    width: 70px;
+    height: 15px;
+    background-color: green;
+}
+
+.more{
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    /* 渐变颜色 */
+    background:-webkit-linear-gradient(left,pink,red);
+    border-radius: 8px;
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}
+
+/* 旋转的三角 */
+.more::after{
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 7px;
+    bottom: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.row
+{
+    display: flex;
+}
+.row a{
+    flex: 1;
+}
+.row a img{
+    width: 100%;
+}
+
+
+

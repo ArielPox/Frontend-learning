@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统的注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>ie9以前的版本支持</button>
+
+    <script>
+        var btn = document.querySelectorAll('button');
+        // 1.传统的注册事件的方式 给同一个事件添加两个内容 只会有最后的一个有效果
+        btn[0].onclick = function () {
+            alert('hi');
+        }
+        btn[0].onclick = function () {
+            alert('hi2');
+        }
+
+        // 2.事件侦听注册事件addEventListener 只有IE9以上使用有效 有兼容问题
+        // (1)里面的事件的类型是字符串型的 必须要加上引号 不要on
+        // (2)同一个元素 同一个事件可以添加多个监听器(事件处理程序)
+        btn[1].addEventListener('click', function () {
+            alert('123');
+        })
+        btn[1].addEventListener('click', function () {
+            alert('abc');
+        })
+
+        // 3.attachEvent只有在ie9以前的版本才可以使用
+        attachEvent('onclick', function () {
+            alert('33');
+        })
+
+        // 4.注册事件兼容性的解决方案
+        function addEventListener(element, eventName, fn) {
+            // 判断当前浏览器是否支持 addEventListener 方法
+            if (element.addEventListener) { // 浏览器支持此种方式，说明认识，就会返回true
+                element.addEventListener(eventName, fn);  // 第三个参数 默认是false
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + eventName, fn);
+            } else {
+                // 相当于 element.onclick = fn;
+                element['on' + eventName] = fn;
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

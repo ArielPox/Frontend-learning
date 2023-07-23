@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="../image/angel.gif" alt="">
+    <script>
+        // 只要移动鼠标就会触发事件 将鼠标的坐标给图片 将图片设置为绝对定位就可以实现
+        var pic=document.querySelector('img');
+        // 这里应该是对于整个页面的坐标
+        document.addEventListener('mousemove',function(e)
+        {
+            var x=e.pageX;
+            var  y=e.pageY;
+            // 千万不可以忘记给坐标加上像素的单位
+            pic.style.top=y-50+'px';
+            pic.style.left=x-40+'px';
+        })
+    </script>
+</body>
+</html>

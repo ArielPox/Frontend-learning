@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            margin: 100px auto;
+        }
+
+        .son {
+            position: absolute;
+            top: 30px;
+            left: 45px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // 没有定位的盒子 返回的是距离视口的数据
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        // 返回的是带有定位的盒子的父级元素 如果没有定位 返回的就是body
+        console.log(son.offsetParent);
+        console.log(son.parentNode);//返回的是最近一级 的父亲
+        // 返回的是自身的数值 但是没有单位 包含的padding 还有border的值
+        console.log(son.offsetWidth);
+        console.log(son.offsetHeight);
+    </script>
+</body>
+
+</html>

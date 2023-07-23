@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 400px;
+        }
+
+        .box {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            margin: 100px auto;
+            transition: all 2s;
+            /* 让子元素保持3d的效果 */
+            transform-style: preserve-3d;
+        }
+
+        .box:hover {
+            transform: rotateY(270deg);
+        }
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 200px;
+            width: 200px;
+            background-color: green;
+
+        }
+
+        .box div:last-child {
+            background-color: rgb(230, 175, 120);
+            transition: all 1s;
+        }
+
+        .box div:last-child:hover {
+            transform: rotateX(120deg);
+        }
+    </style>
+</head>
+<!-- transform-style 是为了控制子元素是否开启3D立体环境
+transform-style：flat不开启是默认的 preserve-3d开启立体空间 
+代码是要写给父级 但是受影响的是子集 -->
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

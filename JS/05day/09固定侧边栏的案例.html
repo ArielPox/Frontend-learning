@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .w{
+            margin: 100px auto;
+        }
+        .header{
+            height: 200px;
+            width: 800px;
+            background-color: rgb(250, 121, 121);
+        }
+        .banner{
+            height: 400px;
+            width: 800px;
+            background-color: rgb(113, 238, 163);
+        }
+        .main{
+            height: 600px;
+            width: 800px;
+            background-color: rgb(179, 237, 52);
+        }
+
+        body{
+            position: relative;
+            overflow: scroll auto;
+        }
+
+        .slider-bar{
+            width: 30px;
+            height: 120px;
+            position: absolute;
+            top: 200px;
+            left: 1032px;
+            background-color: rgb(235, 35, 35);
+        }
+        .goBack{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部部分</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+
+    <script>
+// 1.获取元素
+var sliderbar=document.querySelector('.slider-bar');
+var banner=document.querySelector('.banner');
+var goBack=document.querySelector('.goBack');
+var main=document.querySelector('.main');
+// 2.页面的滚动事件
+document.addEventListener('scroll',function()
+{
+    // window.pageYOffset;页面被走 的头部
+    // console.log(window.pageYOffset);
+    if(window.pageYOffset>=banner.offsetTop)//banner.offsetTop就是banner的高度
+    {
+
+        sliderbar.style.position='fixed';
+        goBack.style.display='block'
+    }
+    else{
+        sliderbar.style.position='absolute';
+        goBack.style.display='none';
+    }
+})
+
+//当点击返回顶部模块 就会滚动到页面的最上方
+goBack.addEventListener('click',function()
+{
+    //因为是窗口的滚动 所以对象就是window
+    animate(window,0);
+}) 
+
+function animate(obj, target,callback) {
+    // 当不停的点击按钮的时候就会有很多个定时器 元素的速度就会变快
+    // 为了解决这个问题 要先清除上一个定时器 只保留当前的定时器
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+
+        // 步长值要写在定时器里面 并且要取整数值才可以
+        var step = (target - window.pageYOffset) / 10;
+
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+        if (window.pageYOffset== target) {
+            // 停止动画 就是停止定时器
+            clearInterval(obj.timer);
+            // 回调函数要写在停止的定时器里面
+            callback&&callback();
+        }
+        // 窗口的滚动不需要加上px的单位
+        window.scroll(0,window.pageYOffset+step);
+    }, 15);
+}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var div = document.querySelectorAll('div');
+        // 1.传统的方式进行事件的移除
+        div[0].onclick = function () {
+            alert(11);
+            div[0].onclick = null;
+        }
+
+        // 2.removeEventListener删除事件有兼容的问题
+        // div[1].removeEventListener('click', fu);//里面的fu不需要加小括号
+        function fu() {
+            alert(22);
+            div[1].removeEventListener('click', fn);
+        }
+
+        // 3有兼容的问题
+        div[2].attachEvent('onclick', fu1);
+        function fu1() {
+            alert(33);
+            div[2].detachEvent('onclick', fu1);
+        }
+    </script>
+</body>
+
+</html>

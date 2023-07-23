@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 200px;
+        }
+
+        img {
+            display: block;
+            height: 200px;
+            width: 160px;
+            margin: 0 auto;
+            transition: all 0.5s;
+        }
+
+        img:hover {
+            /* transform: rotateX(120deg); */
+            /* transform: rotateY(120deg); */
+            /* transform: rotateZ(120deg); */
+            /* 还有rotate3d(x,y,z,deg)沿自定义的方向旋转deg角度
+            其中的x y z填的是大小数字表示的是旋转轴的矢量值 deg表示的是旋转的角度 */
+            transform: rotate3d(1,2,0,180deg);
+
+        }
+    </style>
+</head>
+<!-- 3D的旋转可以沿着 x y z 还有自定义轴旋转
+语法：transform:rotateX|Y|Z(xxdeg)沿着XYZd整方向旋转xx度 
+还有rotate3d(x,y,z,deg)沿自定义的方向旋转deg角度 -->
+<!-- 旋转的左手定则 左手大拇指指向旋转轴的正方向 四指弯曲的方向为旋转的正方向 -->
+
+<body>
+    <img src="images/xlz.png" alt="">
+</body>
+
+</html>

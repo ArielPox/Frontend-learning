@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        diV {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+    </div>
+    <script>
+        //  $('div').hide();
+        // 1. 等待页面dom加载完毕之后再去执行js的代码
+        // $(document).ready(function() {
+        //     $('div').hide();
+        // })
+
+        // 2.等待DOM加载完毕之后再去执行js的代码
+        $(function() {
+                $('div').hide();
+            })
+            //其中的$符号是jQuery的别称 可以直接用jQuery代替同时这个符号还是jQuery的顶级的对象
+    </script>
+</body>
+
+</html>

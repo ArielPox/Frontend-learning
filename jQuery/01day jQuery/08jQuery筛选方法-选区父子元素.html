@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+</head>
+
+<body>
+    <div class="grand">
+
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+    <div class="nav">
+        <p>p标签</p>
+        <div>
+            <p>p标签2</p>
+        </div>
+    </div>
+    <script>
+        // 父 parent()返回的最近一级的父亲元素
+        console.log($('.son').parent());
+        //子元素
+        //(1选择亲儿子的) 类似于子代选择器
+        $('.nav').children('p').css('color', 'green');
+        //(2)可以选择里面所有的孩子 包括儿子还有孙子 类似于后代选择器
+        // $('.nav').find('p').css('color', 'pink');
+    </script>
+</body>
+
+</html>

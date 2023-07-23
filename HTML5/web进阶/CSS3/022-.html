@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            /* 也可以写成 transition:all 1s; */
+            transition: width 1s ,height 1s;/* 谁做过渡给谁加过渡 */
+            
+        }
+        .box1:hover{
+            width: 600px;
+            height: 400px;
+        }
+
+        /* 练习 */
+        .bar{
+            width: 300px;
+            height: 16px;
+            border: 1px solid red;
+            border-radius: 8px;
+        }
+        .bar_in{
+            height: 100%;
+            width: 50%;
+            
+            border-radius: 8px;
+            background-color: orangered;
+            transition: width 1s;
+        }
+        .bar:hover .bar_in{
+            width: 100%;
+        }
+    </style>
+</head>
+<!--  transition 可以做简单的动画 常常与：hover一起搭配使用
+语法：transition：要过渡的属性（全部都有写all） 花费时间 运动曲线(可以省) 合适开始（可以省）
+谁做过渡给谁加过渡-->
+<body>
+    <div class="box1"></div>
+
+    <br>
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+</body>
+</html>

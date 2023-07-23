@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/Echarts.min.js"></script>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: rgb(103, 115, 83);
+        }
+    </style>
+</head>
+<!-- 就是在官网里面找到相应的图表之后就是引进代码就可以了 -->
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        // 实例化对象
+        var myChart = echarts.init(document.querySelector('div'));
+        // 选择的图标的配置
+
+        option = {
+            legend: {},
+            tooltip: {
+                trigger: 'axis',
+                showContent: false
+            },
+            dataset: {
+                source: [
+                    ['product', '2012', '2013', '2014', '2015', '2016', '2017'],
+                    ['Milk Tea', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+                    ['Matcha Latte', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+                    ['Cheese Cocoa', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+                    ['Walnut Brownie', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+                ]
+            },
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                gridIndex: 0
+            },
+            grid: {
+                top: '55%',
+                left: '3%',
+                right: '3%'
+
+            },
+            series: [{
+                type: 'line',
+                smooth: true,
+                seriesLayoutBy: 'row',
+                emphasis: {
+                    focus: 'series'
+                }
+            }, {
+                type: 'line',
+                smooth: true,
+                seriesLayoutBy: 'row',
+                emphasis: {
+                    focus: 'series'
+                }
+            }, {
+                type: 'line',
+                smooth: true,
+                seriesLayoutBy: 'row',
+                emphasis: {
+                    focus: 'series'
+                }
+            }, {
+                type: 'line',
+                smooth: true,
+                seriesLayoutBy: 'row',
+                emphasis: {
+                    focus: 'series'
+                }
+            }, {
+                type: 'pie',
+                id: 'pie',
+                radius: '30%',
+                center: ['50%', '25%'],
+                emphasis: {
+                    focus: 'self'
+                },
+                label: {
+                    formatter: '{b}: {@2012} ({d}%)'
+                },
+                encode: {
+                    itemName: 'product',
+                    value: '2012',
+                    tooltip: '2012'
+                }
+            }]
+        };
+        myChart.on('updateAxisPointer', function(event) {
+            const xAxisInfo = event.axesInfo[0];
+            if (xAxisInfo) {
+                const dimension = xAxisInfo.value + 1;
+                myChart.setOption({
+                    series: {
+                        id: 'pie',
+                        label: {
+                            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                        },
+                        encode: {
+                            value: dimension,
+                            tooltip: dimension
+                        }
+                    }
+                });
+            }
+        });
+        // 给实例化的对象配置上相关的配置
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+
+        }
+        .box11
+        {
+            background-color: red;
+        }
+        .box12
+        {
+            z-index: 1;          /* 此时添加了盒子的次序 就会让绿色盒子在上面 */
+            background-color: green;
+
+        }
+        .box13{
+            background-color:blue;
+        }
+    </style>
+</head>
+<!-- 可以使用z-index来控制盒子的前后次序 语法：选择器{z-index：1}
+数值可以是正整数 复数 或者是0 默认是auto 数值越大 盒子越往上 
+如果值都是相同的 按照书写的顺序 后来者居上
+tip:只有定位的盒子才有这个属性-->
+<body>
+    <div class="box1 box11"></div>
+    <div class="box1 box12"></div>
+    <div class="box1 box13"></div>
+</body3>
+</html>

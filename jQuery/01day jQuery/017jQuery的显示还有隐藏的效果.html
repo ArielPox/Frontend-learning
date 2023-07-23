@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js">
+    </script>
+    <style>
+        div {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button>button1</button>
+    <button>button2</button>
+    <button>button3</button>
+    <div></div>
+    <script>
+        $(function() {
+            $('button').eq(0).click(function() {
+                $('div').show(1000, function() {
+                    alert(1);
+                });
+            });
+            $('button').eq(2).click(function() {
+                $('div').show(1000, function() {
+                    alert(1);
+                });
+
+            });
+        }); // 在一般情况下 我们不用加参数 直接使用即可
+    </script>
+</body>
+
+</html>

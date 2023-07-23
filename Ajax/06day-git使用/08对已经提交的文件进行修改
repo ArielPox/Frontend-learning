@@ -1,0 +1,5 @@
+1已经被git跟踪 修改过的文件还没有放在暂存区 其statu是modified 简明的git status -s 是在文件的前面有一个红色的M
+
+2.将修改的文件进行 git add filename 文件的status -s 会出现一个绿色的M 表示文件已经修改并且已经进入带暂存区
+
+3.提交已经修改的文件 再次运行git commit -m "提交的消息"

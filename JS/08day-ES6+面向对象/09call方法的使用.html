@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fu(x, y) {
+            console.log("我要喝水");
+            console.log("我要暴富");
+            console.log(x + y)
+        }
+
+        var o = {
+
+            name: 'andy'
+        };
+        //1.call()可以调用函数
+        fu.call();
+        // 2.call()可以改变函数fu的this指向 下面的this就会指向o这个对象 之前的方法也会继承到o这个对象
+        fu.call(o, 1, 2);
+    </script>
+</body>
+
+</html>

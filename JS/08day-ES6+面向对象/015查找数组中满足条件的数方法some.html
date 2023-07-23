@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //some返回的是一个bool的值 找到这个数就会返回true没有找到的话就会返回的是false 只要找到满足条件的元素就会停止查找 返回true
+        var arr = [1, 2, 3, "张三"];
+        var S = arr.some(function(value) {
+            return value === "张三";
+        })
+        console.log(S);
+    </script>
+</body>
+
+</html>

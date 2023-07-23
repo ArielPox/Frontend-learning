@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <!-- 定义模版引擎 -->
+    <script type="text/html" id="tpl-user">
+        <div>姓名:{{name}}</div>
+        <div>年龄:{{age}}</div>
+        <div>性别:{{gender}}</div>
+        <div>地址:{{address}}</div>
+    </script>
+
+    <script>
+        // 定义数据
+        let data = {
+            name: "andy",
+            age: 10,
+            gender: 'man',
+            address: 'guizhou'
+        };
+
+        // 调用引擎模版
+        let htmlStr = template('tpl-user', data);
+
+        // 渲染html的结构
+        document.getElementById('container').innerHTML = htmlStr;
+    </script>
+</body>
+
+</html>

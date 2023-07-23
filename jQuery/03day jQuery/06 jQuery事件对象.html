@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        $(function() {
+            // jQuery的事件对象 可以阻止冒泡行为 阻止默认的行为
+            $(document).on("click", function() {
+                console.log("点击了document");
+            });
+            $("div").on("click", function(event) {
+                console.log("点击了div的盒子");
+                event.stopPropagation();
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

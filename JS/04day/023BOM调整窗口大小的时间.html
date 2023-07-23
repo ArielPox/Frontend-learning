@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+    </style>
+
+    <script>
+        // 1.传统window.onresize=function(){};
+        // 2.新型window.addEventListener('resize',function(){});
+        // 3.以上就是调整窗口大小加载的时间 当触发的时候就会调用函数
+        // 4.注意：只要是窗口大小发生变化的时候就会触发这个函数 经常使用这个事件来完成响应式的布局 window.innerWidth可以获取当前屏幕的宽度
+
+        window.addEventListener('load', function () {
+            var div = document.querySelector('div');
+            window.addEventListener('resize', function () {
+                console.log(window.innerWidth);
+                if (window.innerWidth <= 800) {
+                    div.style.display = 'none';
+                }
+                else {
+                    div.style.display = 'block';
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <div></div>
+</body>
+
+</html>

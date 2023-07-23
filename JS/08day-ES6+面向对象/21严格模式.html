@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 严格模式只会在ie10以上的游览器使用 -->
+    <script>
+        //1.消除了js语法的不合理的的地方 保证代码的安全的运行 减少怪异的行为 提高编译器的运行的效率
+        //2,严格模式可以在整个的脚本里面打开 也可以在部分的函数里面使用两种模式
+        //2.1在整个脚本中添加严格模式的办法就是在所有的代码的前面单引号或者是双引号添加use strict 就可以直接开启严格模式 在IE10以前的版本就会直接忽略这句话 继续执行代码
+        // 2.2在部分函数开启严格模式 在函数的所有的语句前面加上use strict字符串就可以为某一个函数执行严格模式
+        // 3.严格模式的变化：
+        // 3.1 所有的变量必须声明
+        //  3.2 定义好的变量不可以随便的删除
+        //  3.3 全局作用域下的this的指向: 指向是undefined 
+        // 3.4 严格模式下的构造函数不加new调用的话就会报错 需要new实例化的构造函数指向创建的对象实例
+        //  3.5 定时器的this还是会指向window 
+        // 3.6事件还有对象还是指向调用者
+        //3.7 函数里面的参数不可以有重名的现象 在非函数的代码块里面不可声明函数
+    </script>
+</body>
+
+</html>

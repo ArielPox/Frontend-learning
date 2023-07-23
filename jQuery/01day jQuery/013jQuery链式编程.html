@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+</head>
+
+<body>
+    这是body的文字
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        $(function() {
+            // 1.隐式编程 就是给所有的按钮都绑定了点击的时间
+            $('button').click(function() {
+                // 2.让当前的元素的颜色为粉色
+                // $(this).css('color', 'pink');
+                // 3.让其余的兄弟不变色
+                // $(this).siblings().css('color', '');
+
+                // 4.链式编程的效果就是可以一个对象操纵多个事件
+                // $(this).css('color', 'pink').siblings().css('color', '');
+
+                // 5.我的兄弟变为红色 但是的本身是不变色的 最后是我的父级变色
+                $(this).css('color', '').siblings().css('color', 'red').parent().css('color', 'green');
+            });
+        });
+    </script>
+</body>
+
+</html>

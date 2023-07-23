@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //原来的数组对象里面没有求和的方法
+        console.log(Array.prototype);
+        // 现在添加一个求和的对象进去
+        Array.prototype.sum =
+            function() {
+                var sum = 0;
+                for (var i = 0; i < this.length; i++) {
+                    sum += this[i];
+                }
+                return sum;
+            }
+        var arr1 = [1, 2, 3];
+        console.log(arr1.sum());
+        var arr2 = new Array(11, 22, 33);
+        console.log(arr2.sum());
+        // 这是加上sum方法之后的数组对象
+        console.log(Array.prototype);
+    </script>
+</body>
+
+</html>

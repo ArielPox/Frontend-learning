@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: url(../image/exchange1.jpg) no-repeat center top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .baidu {
+            margin: 100px auto;
+            overflow: hidden;
+            background-color: #fff;
+            width: 400px;
+            padding-top: 3px;
+        }
+
+        .baidu li {
+            float: left;
+        }
+
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="baidu">
+        <li><img src="../image/exchange1.jpg" alt=""></li>
+        <li><img src="../image/exchange2.jpg" alt=""></li>
+        <li><img src="../image/exchange3.jpg" alt=""></li>
+        <li><img src="../image/exchange4.jpg" alt=""></li>
+    </ul>
+    </div>
+
+    <script>
+        // 获取元素
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        // 2.循环注册事件
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>

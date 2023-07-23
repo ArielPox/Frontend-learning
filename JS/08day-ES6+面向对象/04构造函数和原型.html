@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //方法一：利用new Object()对象
+        var obj1 = new Object();
+        //方法二：利用字面量创建对象
+        var obj2 = {};
+
+        //方法三利用构函数创建对象
+        // new在执行的时候会做4件事情
+        // 3.1在内存里面创建一个新的空的对象
+        // 3.2让this指向这个新的空的对象
+        // 3.3执行构造函数里面的代码，给这个新的对象添加属性和方法
+        // 3.4返回这个新的对象(所以构造函数里面是不需要return的)
+
+
+
+        // 构造函数里面的属性还有方法我们称之为成员 成员是可以添加的
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            this.sing = function() {
+                console.log("这是一个唱歌的方法");
+            }
+        }
+        // 实例化对象
+        var ldh = new Star("张学友", 23);
+        ldh.sing();
+        console.log(ldh);
+        // 实例成员就是通过构造函数的内部通过this来添加的成员，uname age sing()都是实例化的成员 实例化的成员在对象的外面只可以用实例化对象来访问
+        // 不可以通过构造函数来访问实例化的成员console.log(Star.name);
+        //静态成员就是构造函数本身上添加的成员sex 就是静态成员 并且静态成员只可以用构造函数来访问
+        Star.sex = "男";
+        console.log(Star.sex);
+        //静态成员是不可以通过实例化的对象来访问的
+    </script>
+</body>
+
+</html>

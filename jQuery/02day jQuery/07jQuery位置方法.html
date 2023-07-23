@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .father {
+            position: relative;
+            height: 400px;
+            width: 400px;
+            background-color: green;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        
+        .son {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        $(function() {
+            // 1.获取设置文档的距离(偏移)offset 总是以文档为主
+            console.log($(".son").offset());
+            console.log($(".son").offset().top);
+            $(".son").offset({
+                top: 150,
+                left: 150
+            });
+            // 2.获取的距离带有定位父级位置（偏移）position 如果没有带有定位的父级 则以文档为准 但是这个方法只可以获取 不可以设置偏移
+            console.log($(".son").position());
+
+        });
+    </script>
+</body>
+
+</html>

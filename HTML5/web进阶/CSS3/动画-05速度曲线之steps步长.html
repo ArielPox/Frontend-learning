@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            height: 20px;
+            width: 0;
+            background-color: green;
+            animation: move 4s steps(10) infinite alternate ;
+        }
+
+        @keyframes move {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<!-- animation-timing-function: linear(匀速)|ease(慢块慢)|ease-out(以低速结束)| -->
+<!-- ease-in(以低速开始)|ease-in-out(以低速开始结束)|steps(步数);  -->
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

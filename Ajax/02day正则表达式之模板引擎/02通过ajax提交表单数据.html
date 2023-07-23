@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="./lib/jquery.js"></script>
+</head>
+<!-- 缺点：表单提交会跳转到提交的页面 用户体验感差 页面之前的状态还有数据会丢失 -->
+<!-- 解决:使用ajax采集数据，将数据提交到服务器
+ -->
+
+<body>
+
+    <form action="/login" method="POST" role="form" id="f1">
+        <legend>使用ajax提交表单数据</legend>
+
+        <div class="form-group">
+            <label for="">label</label>
+            <input type="text" class="form-control" id="" placeholder="输入内容">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+        //第一种提交的方式
+        // $('#f1').submit(function(e) {
+        //     alert('监听到了表单提交事件');
+        // e.preventDefault();
+        // })
+
+
+        // 第二种提交方式
+        $('#f1').on('submit', function(e) {
+            alert('监听到了表单事件');
+            // e.preventDefault() 使用这个方法阻止表单在提交的时候跳转
+            e.preventDefault();
+        })
+    </script>
+
+</body>
+
+</html>

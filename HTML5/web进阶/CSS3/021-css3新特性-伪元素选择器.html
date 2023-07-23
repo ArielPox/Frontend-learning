@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div::before{
+            content: '我';
+        }
+        div::after{
+            content: '大美女';
+        }
+    </style>
+</head>
+<!-- 伪元素选择器可以利用CSS创建行的标签元素 而不需要html标签 从而简化html结构 
+::before在元素内部的前面插入内容
+::after在元素内部后面插入内容
+语法：element::before/after{必须有content属性}-->
+<body>
+    <div>是</div>
+</body>
+</html>

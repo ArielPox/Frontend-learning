@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script>
+        // 逻辑中断（也称为逻辑短路）-当有多个表达式的时候 左边的表达式可以确定的时候就不再继续运算右边的表达式的值 
+        // 如果表达式1为真就返回表达式2 如果表达式1为假就会返回表达式1
+        console.log(123 && 456);//456
+        console.log(123 && 456 && 789);//789
+
+        console.log(0 && 123);//0
+   
+        // 逻辑或短路运算 如果表达式1为真返回表达式1 如果表达式1为假 就会返回表达式2
+        
+        console.log(123 || 456);//123
+        
+        console.log(0 ||456);//456
+        console.log(0 ||456 || 789);//456
+   </script>
+</head>
+<body>
+    
+</body>
+</html>

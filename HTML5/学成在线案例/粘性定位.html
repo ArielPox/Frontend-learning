@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        
+        .nav {
+            position: sticky;
+            /* 粘性定位 */
+            top: 20px;
+            /* 距离窗口上方20像素的时候就不再跟随混动条滚动 在此之前都可以跟随滚动条滚动 */
+            width: 800px;
+            height: 50px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<!-- 1以游览器可是窗口为参照点移动元素 
+    2占有原先的位置
+ 3必须添加top left right bottom其中一个才有效 
+4兼容性比较差 在IE里面不支持 可能以后会发展-->
+
+<body>
+    <div class="nav">我是导航栏</div>
+</body>
+
+</html>

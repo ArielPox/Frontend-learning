@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">×</span>
+    </div>
+    <script>
+        // 利用DOM提供的方法比较繁琐 
+        // 利用节点层级关系获取元素 比较简单 但是兼容性比较差
+        // 节点的基本属性 nodeType nodeName nodeValue(元素节点为1 属性节点为2 文本节点为3) 开发中主要使用的是元素节点
+
+        // 1、父节点parentNode
+        var erweima = document.querySelector('.erweima');
+        // 得到的是距离元素最近的父级节点 如果没有父级就会返回为空
+        console.log(erweima.parentNode);
+
+        // 2.子节点 childNodes获取的是子元素的所有的节点 包括元素节点 文本节点 如果要单独得到子元素的节点 就要特殊处理 所以不推荐使用
+        var ul=document.querySelector('ul')
+        console.log(ul.childNodes);
+        console.log(ul.childNodes[0].nodeType);//文本节点为3
+        // 2.1children获取的是所有的子元素节点
+        console.log(ul.children)
+    </script>
+</body>
+
+</html>

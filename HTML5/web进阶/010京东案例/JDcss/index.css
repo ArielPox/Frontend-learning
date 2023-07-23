@@ -1,0 +1,137 @@
+body {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #666;
+    -webkit-text-size-adjust: 100%!important;
+    padding-bottom: env(safe-area-inset-bottom);
+    height: 2000px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    vertical-align: top;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+a{
+    color: #666;
+    text-decoration: none;
+}
+.search-wrap{
+    position: fixed;
+    height: 44px;
+    overflow: hidden;
+    min-width: 320px;
+    max-width: 640px;
+    width: 100%;
+}
+
+.search-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+.search-btn::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../JDimages/search-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search{
+    position: relative;
+    height: 30px;
+    margin: 0 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 7px;
+}
+
+.search-login{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+
+}
+
+.jd-icon{
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background: url(../JDimages/search-icon.png) no-repeat;
+    background-size: 20px 15px;
+
+}
+.jd-icon::after{
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 0;
+    display: block;
+    width: 1px;
+height: 15px;
+background-color: #ccc;
+color: #fff;}
+
+.suo{
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    /* 二倍精灵图的做法 将精灵图缩小为原来的一半 在代码里面的backgrund-sizeye也要写为原来的一半*/
+    background: url(../JDimages/suo.png) no-repeat -75px 2px;
+    background-size:183px auto;
+
+}
+
+/* 主体部分 */
+.slider img{
+    width: 100%;
+}
+
+/* nav部分 */
+.nav{
+    margin-top: 5px;
+}
+.nav a{
+    float: left;
+    width: 20%;
+    text-align: center;
+    background-color: #fff;
+
+}
+
+.nav a img{
+    width: 40px;
+    margin: 10px 0;
+}
+
+.nav a span{
+    /* 行内元素会围绕浮动元素 */
+    display: block;
+}

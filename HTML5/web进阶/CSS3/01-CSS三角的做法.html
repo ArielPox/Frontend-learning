@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            float: left;
+            width: 0;
+            height: 0;
+            border-top: 100px solid rgb(252, 241, 23);
+            border-bottom: 100px solid rgb(195, 63, 169);
+            border-left: 100px solid rgb(27, 180, 40);
+            border-right: 100px solid rgb(181, 40, 40);
+        }
+        .box2{
+            float: left;
+            width: 0;
+            height: 0;
+            border: 100px solid transparent;
+            border-left-color: rgb(236, 123, 123);
+        }
+        .box3{
+            float: left;
+            height: 0;
+            width: 0;
+           
+            /* border-top: 100px solid  transparent; */
+            border-bottom: 100px solid transparent;
+            border-left: 200px solid  transparent;
+            border-right: 200px solid rgb(181, 40, 40); 
+        }
+        .box4 {
+            float: left;
+            width: 0;
+            height: 0;
+            border-top: 100px solid rgb(252, 241, 23);
+            border-bottom: 100px solid rgb(195, 63, 169);
+            border-left: 200px solid rgb(27, 180, 40);
+            border-right: 200px solid rgb(181, 40, 40);
+        }
+        </style>
+</head>
+<!-- 就是宽高为0的盒子 再设置它的边（边的本质就是三角形 -->
+
+<body>
+    <div class="box">
+        
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+    </div>
+</body>
+
+</html>

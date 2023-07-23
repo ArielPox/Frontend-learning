@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. parseInt(变量) 可以将字符型转化为数字的整型
+        var age=prompt('请输入年龄');
+        console.log(parseInt(age));
+        console.log(parseInt('3.13'));//3取整数
+        console.log(parseInt('120px'));//120 会去掉后面的px
+        console.log(parseInt('rem120px'));//NaN;
+        // 2.parseFloat() 转化为浮点数
+        console.log(parseFloat('3.13'));//3取小数
+        console.log(parseFloat('120px'));//120 会去掉后面的px
+        console.log(parseFloat('rem120px'));//NaN
+        // 3 利用Number()
+        var str='123';
+        console.log(Number(str));
+        console.log(Number('123'));
+        // 4.运用了- * / 的算术运算 可以实现隐式转换
+        console.log('12'-0);
+        console.log('12'/9);
+        console.log('12'*2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

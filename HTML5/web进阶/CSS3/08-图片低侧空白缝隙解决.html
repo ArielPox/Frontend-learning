@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 2px solid rgb(215, 43, 72);
+        }
+        
+        .box2 >img{
+            vertical-align: bottom;/* 解决基线对齐取消空白缝隙（提倡使用） */
+            border: 2px solid rgb(215, 43, 72);
+       
+        }
+        
+        .box3 >img{
+           display: block;
+            /* 转换为块级元素也可以解决问题 */
+            border: 2px solid rgb(43, 43, 215);
+        }
+       
+        img{
+            height: 80px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"><img src="images/xlz.png" alt="" >没有对齐的样子</div>
+    <br>
+    <div class="box2"><img src="images/xlz.png" alt="">vertical-align底部对齐的样子对齐的样子</div>
+    <br>
+    <div class="box3"><img src="images/xlz.png" alt="">转为块级元素对齐的样子（转行是因为开机元素单独霸占一行）</div>
+</body>
+</html>

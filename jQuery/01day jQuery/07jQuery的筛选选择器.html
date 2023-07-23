@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/JQuery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+    <ol>
+        <li>345</li>
+        <li>345</li>
+        <li>345</li>
+        <li>345</li>
+        <li>345</li>
+        <li>345</li>
+        <li>345</li>
+    </ol>
+    <script>
+        $(function() {
+            // 将第一行的颜色改为红色
+            $('ul li:first').css('color', 'red ');
+            //将特定的一行改为绿色
+            $('ul li:eq(3)').css('color', 'green ');
+            // 将奇数行改为绿色
+            $('ol li:odd').css('color', 'green ');
+            // 将偶数行改为蓝色
+            $('ol li:even').css('color', 'skyblue ');
+
+
+
+        })
+    </script>
+</body>
+
+</html>

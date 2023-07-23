@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input::placeholder {
+            font-size: 10px;
+            /* 修改默认字的颜色 */
+            color: green;
+        }
+    </style>
+</head>
+<!--html5的新的予以标签 <header>头部标签
+    <nav>导航栏标签
+    <article>内容标签
+        <section> 定义文档某一个区域
+            <aside>侧边栏标签
+                <footer>尾部标签 -->
+
+<!-- 多媒体标签<audio>音频标签
+    <video>视频标签 可以修改宽高
+        可以不使用flash和其他游览器插件就可以播放-->
+
+<body>
+    <video src="medio/vedio1.mp4" autoplay="autoplay" muted="muted" controls="controls" loop="loop"
+        poster="images/xlz.png"></video>
+    <br>
+    <!--  autoplay="autoplay"-自动播放 muted="muted"-静音播放 controls="controls"-播放控件 loop="loop"-循环播放   poster="images/xlz.png"-还没有加载出来的时候等待的图片-->
+    <audio src="url" loop="loop" controls="controls" autoplay="autoplay">
+
+    </audio>
+
+    <!-- input的新增的表单 -->
+    <form action="">
+        <ul style="list-style: none;">
+            <li>邮箱：<input type="email" /></li>
+            <li>网址：<input type="url" /></li>
+            <li>日期：<input type="date" /></li>
+            <li>日期：<input type="time" /></li>
+            <li>数量：<input type="number" /></li>
+            <li>手机号码<input type="tel" /></li>
+            <li>搜索<input type="search" /></li>
+            <li>颜色<input type="color" /></li>
+            <li><input type="submit" value="提交" /></li>
+        </ul>
+        <!-- 新增的表单属性required=“required”-必须书写不能为空 -->
+        <input type="search" id="" required="required">
+        <button>提交</button>
+        <br><br>
+        <input type="search" id="" required="required" placeholder="不搜索的时候显示出来的字" autofocus="autofocus"
+            autocomplete="on" multiple="mutiple">
+            <!-- autofocus="autofocus"-自动对焦在表单中 autocomplete="on"填写的字段可以被记住如果不要被记住 只需要
+                把on改成off即可 multiple="mutiple"-可以选择多文本提交-->
+        <button>提交</button>
+
+    </form>
+</body>
+
+</html>

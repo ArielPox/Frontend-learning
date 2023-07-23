@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 语法结构 
+        // switc(表达式){
+        // case value1:语句一;
+        //      break;
+        // case value1:语句一;
+        //      break;
+        // ...
+        // default:执行最后的语句(上面的内容没有执行 就会执行该语句);}
+        // tip1.表达式和value值是全等的关系
+        // tip2:如果当前的case语句没有break就会一直执行 直达最后或者是遇见break 才会退出
+        var str=prompt('请输入1-5之间的数字');
+        var num1=parseInt(str);
+        switch(num1)
+        {
+            case 1:
+                alert('这是1');
+                break;
+            case 2:
+                alert('这是2');
+                break;
+            case 3:
+                alert('这是3');
+                break;
+            case 4:
+                alert('这是4');
+                break;
+            case 5:
+                alert('这是5');
+                break;
+            default:alert('输入错误');
+            }    
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

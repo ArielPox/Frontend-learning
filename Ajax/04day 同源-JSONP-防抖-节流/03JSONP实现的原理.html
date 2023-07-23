@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <!-- 原理：由于同源策略不同网页的ajax无法请求非同源的接口数据 不过 script标签不受策略的影响 可
+        以通过src属性请求非同源的js的脚本得到跨域数据的接口 通过函数调用的方式接受跨域接受回来的数据
+     -->
+
+    <!--    // 会由于同源问题失败
+    <script>
+       
+              $.ajax({
+                    method: 'POST',
+                    url: 'http://ajax.frontent.itheima.net:3006/api/jsonp',
+                    data: {
+                        name: 'andy',
+                        age: 12
+
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                }) 
+    </script> -->
+
+
+    <!-- 1.函数调用 -->
+    <script>
+        function success(data) {
+            console.log("拿到了data数据");
+            console.log(data);
+        }
+    </script>
+
+    <!-- 2.使用script标签请求到js脚本得到接口 ?拼接字符串说明只调用叫做success的函数 -->
+    <script src="./js/getdata.js?callback=success">
+    </script>
+
+</body>
+
+</html>

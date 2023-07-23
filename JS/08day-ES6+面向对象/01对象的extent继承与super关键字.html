@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 对象没有变量提升 需要先定义类 之后才可以实例化对象 
+写共有的属性还有方法的时候要加this写在构造函数里面-->
+
+<body>
+    <script>
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+
+        }
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y); //调用的是父类的构造函数 还可以调用父类的其他的函数,z子类也可以使用自己构造函数里面的东西 但是要把super放在子类的this之前 
+                this.x = x;
+                this.y = y;
+                this.Subtract();
+            }
+
+            Subtract() {
+                console.log(this.x - this.y);
+            }
+        }
+
+        var son = new Son(1, 2);
+        son.Subtract();
+        son.sum();
+        //1.在继承中 如果实例化子类输出一个方法 先看子类有没有这个方法 有的话就直接执行的是子类的
+        // 2.继承中:如果子类里面没有这个方法 就会去查找父类有没有这个方法 假如有的话就会执行父类的方法 遵从的是就近原则
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 如果勾选用户名，下次用户打开浏览器，就在文本框里面自动的显示上次登录的用户名 -->
+    <!-- 打开页面 先判断是否有这个用户名 如果有就在表单里面显示用户名 并且勾选复选框 -->
+    <!-- 如果复选框发现改变 勾上的时候就会存储 没有勾上的话就会移除 -->
+    <input type="text" id="username"> <input type="checkbox" name="" id="remember">
+    <script>
+        var username = document.querySelector('#username');
+        var remember = document.querySelector("#remember");
+        if (localStorage.getItem('username')) {
+            username.value = localStorage.getItem('username');
+            remember.checked = true;
+        }
+        remember.addEventListener('change', function() {
+            if (this.checked) {
+                localStorage.setItem('username', username.value)
+            } else {
+                localStorage.removeItem('username');
+            }
+        })
+    </script>
+    </ body>
+
+</html>

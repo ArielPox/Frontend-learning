@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            transition: all 0.3s;
+        }
+        
+        .box1:hover {
+            /* 放大 */
+            transform: scale(2, 3);
+        }
+        
+        .box2 {
+            height: 200px;
+            width: 200px;
+            margin-top: 10px;
+            transition: all 0.3s;
+            background-color: green;
+        }
+        
+        .box2:hover {
+            /*缩小 */
+            transform: scale(.5, 0.6);
+        }
+        /* 改变缩放的中心 */
+        
+        .box3 {
+            height: 200px;
+            width: 200px;
+            margin-top: 10px;
+            transition: all 0.3s;
+            transform-origin: left bottom;
+            background-color: green;
+        }
+        
+        .box3:hover {
+            /*缩小 */
+            transform: scale(.5, 0.6);
+        }
+    </style>
+</head>
+<!--语法transform：scale(宽的倍数，高的倍数)大于一就是放大 小于一就是缩放 如果等比例缩放 写一个倍数也可以
+优势：不会影响其他的盒子 并且可以设置缩放的中心点 -->
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

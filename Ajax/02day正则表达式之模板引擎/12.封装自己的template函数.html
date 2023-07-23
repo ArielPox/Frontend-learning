@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <!-- 定义模版引擎 -->
+    <script type="text/html" id="tpl-user">
+        <div>name:{{name}}</div>
+        <div>age:{{age}}</div>
+        <div>gender:{{gender}}</div>
+        <div>address:{{address}}</div>
+    </script>
+
+    <script>
+        // 封装template函数 将全部的末模版内容提取出来
+        function template(id, data) {
+            let str = document.getElementById(id).innerHTML;
+            let pattern = /{{\s*([a-zA-Z]+)\s*}}/;
+
+            let patternResult = null;
+            while (patternResult = pattern.exec(str)) {
+                str = str.replace(patternResult[0], data[patternResult[1]]);
+            }
+            return str;
+        }
+        // 定义数据
+        let data = {
+            name: "andy",
+            age: 10,
+            gender: 'man',
+            address: 'guizhou'
+        };
+
+        // 调用引擎模版
+        let htmlStr = template('tpl-user', data);
+
+        // 渲染html的结构
+        document.getElementById('container').innerHTML = htmlStr;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>事件的解除</li>
+        <li>事件的解除</li>
+        <li>事件的解除</li>
+        <li>事件的解除</li>
+        <li>事件的解除</li>
+        <li>事件的解除</li>
+    </ul>
+    <p>这是一个段落</p>
+    <script>
+        $(function() {
+            $("div").click(function() {
+                console.log("点击事件");
+            });
+            $("div").mouseenter(function() {
+                console.log("鼠标经过的事件");
+            });
+
+            // 1.事件解绑的事件off()
+            // $("div").off(); //这是将div身上的所有的事件都解除掉
+            // $("div").off("click"); //这是将div身上的点击事件去掉
+            $("div").off("mouseenter"); //这是将div身上的鼠标经过的事件移除掉
+
+            $("ul").on("click", "li", function() {
+
+                alert("事件委托");
+            });
+            // 还可以将时间委托给解决掉
+            $("ul").off("click",
+                "li");
+
+            // 2.只会触发一次的one()
+            $("p").one("click", function() {
+                console.log($("p").html());
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(166, 235, 141);
+            padding: 20px;
+            border: 2px solid rgb(255, 51, 85);
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(104, 76, 229);
+            padding: 20px;
+            border: 2px solid rgb(230, 84, 109);
+            /* 这句话就让盒子变味了CSS3模型不会被撑大了 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS初始化normalize.css
+    官网的地址http://necolas.github.io/normalize.css/ 
+CSS3盒子模型box-sizing:border-box 不同于传统的盒子模型会被padding与边框撑大 移动端完全可以使用CSS3盒子模型
+box-sizing:content-box;就是传统的盒子模型 某些老旧的PC端会用到传统的盒子模型-->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <!-- 特殊样式
+    /*CSS3盒子模型*/
+ box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ /*点击高亮我们需要清除清除 设置为transparent 完成透明*/
+ -webkit-tap-highlight-color: transparent;
+ /*在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式*/
+ -webkit-appearance: none;
+ /*禁用长按页面时的弹出菜单*/
+ img,a { -webkit-touch-callout: none; } -->
+
+
+</body>
+
+</html>

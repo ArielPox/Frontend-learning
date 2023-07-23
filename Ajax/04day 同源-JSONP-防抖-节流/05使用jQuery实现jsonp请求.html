@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <script>
+        // tip: 在默认的情况下jQuery发起jsonp请求会自动的携带一个callback = Jqueryxxx的参数 是随机生成的一个回调函数的名称
+        $.ajax({
+            url: 'http://ajax-base-api-t.itheima.net/api/jsonp?callback=abc&name=ls&age=30',
+            // 必须要有dataType:'jsonp'
+            dataType: 'jsonp',
+            success: function (res) {
+                console.log(res)
+            }
+        })
+
+        /*         在jQuery中的jsonp的实现过程：1在发起jsonp请求的时候动态的向head标签中append一个script标签
+                2.在jsonp请求成功之后 动态的从head中将之前动态添加的script标签除去 */
+    </script>
+</body>
+
+</html>

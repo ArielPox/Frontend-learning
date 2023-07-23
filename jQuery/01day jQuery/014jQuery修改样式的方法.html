@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function() {
+            //1.假如只写属性的名称但是没有写数值的话 只会返回该属性的值
+            console.log($('div').css('width'));
+            // // 2.单个的改变样式的时候可以用
+            // $('div').css('width', '300px');
+            // 3.要修改多个属性的时候用以下方法 并且复合的属性名称要用的是驼峰命名法 如果值不是数字的话 就需要加上引号
+            $('div').css({
+                width: 400,
+                height: 400,
+                backgroundColor: 'green'
+            })
+        })
+    </script>
+</body>
+
+</html>

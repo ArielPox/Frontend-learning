@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //1.DOM对象就是用原生的js来获取的对象就叫DOM对象
+        var div = document.querySelector('div');
+        //这就是一个DOM对象
+        //2.jQuery对象 就是用的是jQuery的凡是获取过来的对象本质就会说将DOM的对象进行了伪数组的封装
+        $('div').hide(); //这就是一个jQuery对象
+        //3.jQuery对象就只可以使用jQuery的自己的方法不可以使用原生js代码的方法  DOM对象也就只可以使用原生的js的代码的方法
+    </script>
+</body>
+
+</html>

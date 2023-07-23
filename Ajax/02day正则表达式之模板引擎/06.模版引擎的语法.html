@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.引入templatede -->
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/template.js"></script>
+    <script src="./lib/template-web.js"></script>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+
+    <!-- 3.定义一个模版 并且模版一定要定义在scritp的标签的里面 -->
+    <script type="text/html" id="tpl-user">
+        <h1> {{name}} ----------- {{age}}</h1>
+        <p>
+            <!-- 原文输出 {{@value}}-->
+            {{@test}}</p>
+        <div>
+            <!-- 条件输出 {{if value}} 输出内容{{/if}}还可以多个判断{{if value1}} 输出{{ else if value2}} 输出....{{/if}}-->
+            {{if flag===1}} flag数值是1 {{else if flag===0}} flag的数值是0 {{/if}}
+        </div>
+        <ul>
+            <!-- 循环输出 {{each arr}} {{$index}} {{$value}} {{/each}}-->
+            {{each arr}}
+            <li>索引是{{$index}} 值是{{$value}}</li> {{/each}}
+        </ul>
+        <h3>
+            <!-- 过滤器的语法：将数值处理之后再返回一个新的值基本的语法：template.defaults.imports.filterName=fuction(value){return 返回的值} -->
+            {{date|dateFormat}}
+        </h3>
+    </script>
+
+    <script>
+        // 定义一个过滤器 处理时间
+        template.defaults.imports.dateFormat = function (date) {
+            let y = date.getFullYear();
+            let m = date.getMonth();
+            let d = date.getDate();
+
+            return y + '-' + m + '-' + d;
+
+        }
+
+        // 2.定义需要渲染的数据
+        let data = {
+            name: "Andy",
+            age: 12,
+            test: '<h3>原文输出的测试，带有html标签的时候为了不显示标签 需要使用原文输出{{@value}}</h3>',
+            flag: 0,
+            arr: ['apple', 'orange', 'juicy'],
+            date: new Date()
+        };
+        // 4.调用template函数
+        let tem = template('tpl-user', data)
+
+        //5.渲染html结构
+        $("#container").html(tem);
+    </script>
+</body>
+
+</html>

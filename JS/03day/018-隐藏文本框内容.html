@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 42px;
+            width: 350px;
+            margin: 100px auto;
+        }
+
+        input {
+            outline: none;
+            border: 0;
+            height: 40px;
+            width: 250px;
+            font-size: 14px;
+            padding-left: 25px;
+            border: 1px solid rgb(33, 68, 247);
+            margin-top: 0;
+            color: #ccc;
+        }
+
+        button {
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            width: 67px;
+            background-color: rgb(45, 91, 255);
+            font-size: 18px;
+            color: #fff;
+            margin-left: -5px;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" value="请输入内容">
+        <button>搜索</button>
+    </div>
+    <script>
+        // 1.获取元素
+        var text = document.querySelector('input');
+        // 2.注册事件 获得焦点事件
+        text.onfocus = function () {
+            console.log('获得焦点');
+            if (this.value === '请输入内容') {
+                this.value = '';
+            }
+            this.style.color = '#333';
+        }
+        // 3.注册事件 失去焦点事件 onblur
+        text.onblur = function () {
+            console.log('失去了焦点')
+            if (this.value === '') {
+                this.value = '请输入内容';
+            }
+            this.style.color = '#999';
+        }
+    </script>
+</body>
+
+</html>

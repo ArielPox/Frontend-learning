@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个对象
+        var o = {
+            age: 18,
+        }
+        if (o['sex']) {
+            console.log('里面有这个属性');
+        }
+        else {
+            console.log('里面没有这个属性');
+        }
+        // 判断一个字符串'abcoefoxyizzopp'中出现次数最多的字符，并且统计其字数
+        // 核心算法：利用charAt()遍历字符串
+        // 把每个字符串储存给对象 如果对象没有这个属性的话就为1 如果存在了就会加1
+        // 遍历对象:得到最大的值和该字符
+        var str = 'abcoefoxyizzopp';
+        var O = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (O[chars]) {
+                //O[chars]得到的是成熟性的值
+                O[chars]++;
+            }
+            else {
+                O[chars] = 1;
+            }
+        }
+        console.log(O);
+
+        // 遍历对象
+        var max=0;
+        var ch='';
+        for(var k in O)
+        {
+            if(O[k]>max)
+            {
+                max=O[k];
+                ch=k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符是'+ch);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

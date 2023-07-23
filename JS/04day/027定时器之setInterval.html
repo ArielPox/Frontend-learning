@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // 每隔一段时间 就去调用一次这个函数 会调用很多次 不像setTimeout只调用一次
+    // setInterval(回调函数，[间隔的毫秒数])：
+window.addEventListener('load',function()
+{
+    setInterval(function()
+    {
+        var time=new Date();
+        t=time.getSeconds();
+        console.log(t);
+    },2000);
+})
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 要求当前的网页必须是使用ie最高的版本的内核来渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视口标签的设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!--[if lt IE 9]>
+             为了解决浏览器对新标签不识别的时候出现的问题 
+      <script src="https://cdn.jsdelivr.cn/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.cn/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>Bootstrap 101 Template</title>
+    <style>
+        .row div {
+            border: 1px solid #000;
+            height: 50px;
+        }
+    </style>
+</head>
+<!-- 使用col-md-push- 推动 col-md-pull- 拉动 -->
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">左侧</div>
+            <div class="col-md-8">右侧</div>
+        </div>
+    </div>
+    <!-- 在排序之后 -->
+    <div class="container">
+        <div class="row">
+            <!-- 向右推8 -->
+            <div class="col-md-4 col-md-push-8">左侧</div>
+            <!-- 向左拉4 -->
+            <div class="col-md-8 col-md-pull-4">右侧</div>
+        </div>
+    </div>
+</body>
+
+</html>

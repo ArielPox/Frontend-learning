@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 键盘对象中的keyCode 可以得到键盘对应的ascll码值
+        // 1.keypress是可以区分大小写的 但是keydown与keyup是不区分字母的大小写的
+        document.addEventListener('keypress', function (e) {
+            console.log('keypress:' + e.keyCode);
+        })
+        document.addEventListener('keyup', function (e) {
+            console.log('ketup:' + e.keyCode);
+        });
+        document.addEventListener('keydown', function (e) {
+            console.log('keydown:' + e.keyCode);
+        });
+    </script>
+</body>
+
+</html>

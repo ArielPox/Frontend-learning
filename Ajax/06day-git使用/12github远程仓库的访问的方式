@@ -1,0 +1,10 @@
+hhtps:每次访问仓库需要输入密码
+SSH:需要进行额外的牌子 但是配置成功之后 每次访问github仓库不用重复的输入账号与密码
+
+https:使用步骤 
+1,复制https的链接
+2.打开当前的文件的git bash
+3.输入 git remote add origin https链接
+4.git push -u origin master
+
+SSh使用：

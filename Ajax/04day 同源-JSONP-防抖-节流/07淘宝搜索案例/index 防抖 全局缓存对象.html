@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <!-- 导入页面的基本样式 -->
+  <link rel="stylesheet" href="./css/search.css" />
+  <!-- 导入 jQuery -->
+  <script src="./lib/jquery.js"></script>
+  <!-- 导入模板引擎 -->
+  <script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img src="./images/taobao_logo.png" alt="" class="logo" />
+
+    <div class="box">
+      <!-- tab 栏 -->
+      <div class="tabs">
+        <div class="tab-active">宝贝</div>
+        <div>店铺</div>
+      </div>
+      <!-- 搜索区域（搜索框和搜索按钮） -->
+      <div class="search-box">
+        <input id="ipt" type="text" class="ipt" placeholder="请输入要搜索的内容" /><button class="btnSearch">
+          搜索
+        </button>
+      </div>
+      <!--模版1 搜索建议列表 -->
+      <div id="suggest-list"></div>
+    </div>
+  </div>
+
+  <!-- 模板结构 -->
+  <script type="text/html" id="tpl-suggestList">
+        {{each result}}
+        <div class="suggest-item">{{$value[0]}}</div>
+        {{/each}}
+    </script>
+
+  <script>
+    // 1.定义一个全局的缓存对象
+    var catchObj = {};
+
+    // tip: 输入框防抖策略就是 当事件促发之后 延迟n秒再执行回调在n秒期间事件又被触发 
+    //  那么就重新计时 减少请求次数 节约请求资源
+    var timer = null;
+    // 定义防抖动函数
+    function debounceSearch(kw) {
+      timer = setTimeout(function () {
+        getSuggestLIst(kw);
+      }, 1000);
+    }
+
+
+    // 绑定keyup事件
+    $(function () {
+      // 为输入框绑定keyup事件
+      $('#ipt').on('keyup', function () {
+        // 清空timer
+        clearTimeout(timer);
+        // trim()表示是将空格去除 返回新的字符串
+        let keywords = $(this).val().trim();
+        if (keywords.length <= 0) {
+          return;
+        }
+
+        // 优先使用存在的缓存数据
+        if (catchObj[keywords]) {
+          rederSuggestList(catchObj[keywords]);
+        } else {
+          //缓存对象中没有数据再请求每次按下键盘得到输入的内容
+          console.log(keywords);
+          debounceSearch(keywords);
+        }
+      })
+    })
+
+    // 将建议列表中的数据获取封装到getSuggestLIst函数中
+    function getSuggestLIst(kw) {
+      $.ajax({
+        // 指定的url地址 其中q是用户输入的关键字
+        url: 'https://suggest.taobao.com/sug?q=' + kw,
+        // 指定要发起的jsonp请求
+        dataType: 'jsonp',
+        // 成功的回调函数
+        success: function (res) {
+          rederSuggestList(res);
+        }
+      })
+    }
+
+    //  渲染模板
+    function rederSuggestList(res) {
+      // 假如返回的数据为空就将建议列表清空隐藏 反之全部展示出来
+      if (res.result.length <= 0) {
+        return $("#suggest-list").empty().hide();
+      } else {
+        let htmlStr = template('tpl-suggestList', res);
+        $("#suggest-list").html(htmlStr).show();
+
+        // 2.将数据储存到缓存对象中
+        // 将用户的输入内容作为key
+        let key = $("#ipt").val().trim();
+        // 将返回的数据作为值存储到对象中
+        catchObj[key] = res;
+      }
+    }
+  </script>
+</body>
+
+</html>

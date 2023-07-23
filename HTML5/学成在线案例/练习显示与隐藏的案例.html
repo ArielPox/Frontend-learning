@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .td {
+            position: relative;
+            width: 490px;
+            height: 276px;
+            margin: 0 auto;
+        }
+
+        .td img {
+            width: 100%;
+            height: 100%px;
+        }
+
+        .mask {
+            display: none;
+            /* 隐藏黑色遮罩 */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .td:hover .mask {
+            /* 鼠标经过的时候黑色遮罩就出来了 */
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="td">
+        <div class="mask">
+            <span></span>
+        </div>
+        <img src="images/td.jpg" alt="">
+    </div>
+</body>
+
+</html>

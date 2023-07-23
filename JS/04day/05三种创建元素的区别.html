@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <script>
+        // 三种创建元素的方法的区别
+        // 1.document.write()创建元素 如果页面的文档流加载完毕 就会导致页面的重绘 就是页面中只有这句话的内容
+        var btn = document.querySelector('button');
+        btn.onclick = function () {
+            document.write('<div>123</div');
+        }
+        // 2.innerHTML创建多个元素的效率会更加的高（不是拼接字符串清洁的形式 而是数组拼接的形式） 结构会稍微的复杂一些
+        // 效率的测试
+        function fu2() {
+            var d1 = +new Date();
+
+            var str = '';
+            var inner = document.querySelector('.inner')
+            for (var i = 0; i < 10000; i++) {
+                inner.innerHTML += '<a herf="#">太阳</a>'
+            }
+            var d2 = +new Date();
+            console.log(d2 - d1);
+        }
+        console.log('原生的innerHTML创建元素的效率')
+        fu2();
+
+        function fu21() {
+            var d1 = +new Date();
+
+            var str = '';
+            var inner = document.querySelector('.inner')
+            var arr = [];
+            for (var i = 0; i < 10000; i++) {
+                arr.push('<a herf="#">太阳</a>'
+                )
+            }
+            inner.innerHTML = arr.join('');
+            var d2 = +new Date();
+            console.log(d2 - d1);
+        }
+        console.log('采用数组拼接的方式的innerHTML创建元素的效率')
+        fu21();
+
+        // 3.createElement()创建多个元素的效率会低一点 但是结构会更加的清晰
+        // 效率的测试
+        function fu3() {
+            var d1 = +new Date();
+
+            var str = '';
+            for (var i = 0; i < 10000; i++) {
+                var div = document.createElement('div');
+                document.body.appendChild(div)
+            }
+            var d2 = +new Date();
+            console.log(d2 - d1);
+        }
+        console.log('createElement创建元素的效率')
+        fu3();
+// 总的来说innerHTML的效率会比createElement更加的高一些
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/Echarts.min.js"></script>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            border: 40px solid green;
+            /* 图片做边框的使用的方法 */
+            /* 步骤一 引入作为边框的图片*/
+            border-image-source: url(images/border.webp);
+            /* 步骤二 图片边框向内偏移 方向一次为：上右下左 不需要加上单位*/
+            border-image-slice: 60 60 60 60;
+            /* 步骤三：图片边框的宽度 不是边框的宽度 是图片的 需要加上单位 并且不会挤压边框里面 的内容 */
+            border-image-width: 30px;
+            /* 步骤四 图像边框是否平铺（repeat）铺满（round) 拉伸（strech）这个是默认的形式 */
+            border-image-repeat: stretch;
+        }
+    </style>
+</head>
+<!-- 在CSS3中 增加了border-image的属性 这个属性允许特定的一幅图像作为元素的边框 -->
+
+<body>
+    <div>123</div>
+</body>
+
+</html>

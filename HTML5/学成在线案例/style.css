@@ -1,0 +1,652 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.w{
+    width: 1200px;
+    margin: auto;
+}
+/*清除浮动 */
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+
+body{
+    background-color: #f3f5f7;
+    height:6000px;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+             /* 1，头部区域开始了 */
+.header{
+    height: 42px;
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+/* 导航栏部分 */
+.nav{
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+margin: 0 15px;
+}
+
+.nav ul li a{
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+    text-decoration: none;
+}
+
+.nav ul li a:hover{
+    border-bottom: 1px solid #00a4ff;
+    color: #00a4ff;
+}
+
+/* 搜索栏部分 */
+.search{
+    float: left;
+    width: 411px;
+    height: 42px;
+    line-height: 42px;
+    margin-left: 60px;
+    background-color: red;
+}
+
+.search input{
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid  #00a4ff;
+    border-right:0;
+    font-size:14px ;
+    padding-left: 15px;
+    color: #d1d2d3;
+}
+
+.search button{
+    float: left;
+    width: 50px;
+    height: 42px;
+    line-height: 42px;
+    /* 按钮默认有一个边框 手动去除 */
+    border: 0;
+    background:url('images/button.png');
+}
+
+/* 用户模块 */
+.user{
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    margin-top: 5px;;
+    font-size: 14px;
+    color:#666666;
+}
+                /* 头部区域结束了 */
+
+                 /* 2，banner区域开始了*/
+.banner{
+    height: 421px;
+    background-color: #1c036c;
+}
+
+.banner .w{
+    height: 421px;
+    background: url(images/banner2.png) no-repeat top center;
+}
+
+/* 左侧导航栏 */
+.w .subnav{
+    float: left;
+    width: 190px;
+    height: 421px;
+    /* 设置半透明效果 */
+    background: rgba(0,0,0,0.3);
+}
+
+
+.subnav ul li{
+    height: 46px;
+    line-height: 46px;
+    padding: 0 20px;
+
+}
+
+.subnav ul li a{
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav ul li a span{
+    float: right;
+}
+
+.subnav ul li a:hover{
+    color: #00a4ff;
+}
+
+/* 右侧课程表 */
+.course{
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color:#fff;
+    /* 浮动盒子不会有外边距合并的问题 */
+    margin-top: 50px;
+}
+
+.course h2{
+    width: 230px;
+    height: 48px;
+    font-size: 18px;
+    line-height: 48px;
+    text-align:center;
+    color: #fff;
+    background-color:skyblue;
+}
+
+.course .bd{
+    padding:0 20px;
+}
+
+.course .bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.course .bd ul li h4{
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.course .bd ul li p{
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.course .more{
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 38px;
+    color:#00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+}
+        /* banner部分结束了 */
+
+        /* 3，精品推荐栏部分开始了 */
+.goods {
+    height: 60px;
+    background-color: #fff;
+    margin-top: 10px;
+    line-height: 60px;
+    /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.goods h3{
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.goods ul{
+    float: left;
+    margin-left: 35px;
+}
+
+.goods ul li {
+    float: left;
+}
+
+.goods ul li a{
+    padding: 0 35px;
+    font-size: 16px;
+    color: #050505;
+    border-left: 1px solid #bfbfbf;
+}
+
+.goods .mod{
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+         /* 3精品推荐栏部分结束 */
+
+         /* 4，精品推荐模块开始 */
+.box{
+    margin-top: 30px;
+}
+
+.box-hd{
+    height:45px;
+}
+
+.box .box-hd h3{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+
+}
+
+.box .box-hd a{
+    float: right;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-right:30px;
+    color: #a5a5a5;
+     
+}
+/* 将ul的宽修改为能放要求盒子的宽度 */
+.box ul{
+    width:1225px;
+}
+
+.box-bd ul li {
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color:#ffffff;
+    margin-right:15px;
+    margin-bottom:15px;
+     /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+     box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+         /* 4，精品推荐模块开始 */
+.box-bd ul li >img{
+    width: 100%;
+}
+.box-bd ul li em {
+    position: absolute;
+    top: 0;
+    right: -4px;
+
+}
+
+.box-bd ul li h4{
+    margin: 25px 20px 0 20px;
+    font-size: 14px;
+    color: #050505;  
+    font-weight: 400;  
+}
+
+.box-bd .info{
+    margin:20px 0 20px 20px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.box-bd .info span
+{
+    color: #ff7c2d;
+}
+
+   /* 4，精品推荐模块结束 */
+
+   /* 5精品推荐part2开始 */
+
+/* 推荐栏开始 */
+.grade{
+    height: 42px;
+    margin-top: 40px;
+    /* margin-bottom: 25px;
+ */}
+.grade h3{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.grade ul{
+    float: left;
+    margin-left: 355px    ;
+}
+.grade ul li{
+
+    float: left;
+    margin-right: 70px;
+}
+.grade ul li a{
+    display: block;
+    font-size: 16px;
+    color: #868686;
+}
+
+.grade ul li a:hover{
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
+}
+
+.grade .look{
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+
+}
+/* 推荐栏结束 */
+.part2{
+     height: 390px;
+   
+}
+
+.part2 .box-l
+{
+    float: left;
+    width: 230px;
+    height: 390px;
+    margin-right: 10px;
+    
+     /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+    background:url(images/part2-1.png);
+}
+
+.part2 .box-r .img1{
+    height: 100px;
+    width: 960px;
+}
+.box-r ul li {
+    float: left;
+    width: 228px;
+    height: 275px;
+    margin-top: 10px;
+    margin-right: 12px;
+    background-color:#ffffff;
+     /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+     box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+.box-r ul li img{
+    width: 100%;
+}
+
+.box-r ul li h4{
+    margin: 25px 20px 0 20px;
+    font-size: 14px;
+    color: #050505;  
+    font-weight: 400;  
+}
+
+.box-r .info{
+    margin:20px 0 20px 20px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.box-r .info span
+{
+    color: #ff7c2d;
+}
+
+   /* 5精品推荐part2结束 */
+   /* 6精品推荐part3开始 */
+
+/* 推荐栏开始 */
+.grade{
+    height: 42px;
+    margin-top: 40px;
+    /* margin-bottom: 25px;
+ */}
+.grade h3{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.grade ul{
+    float: left;
+    margin-left: 355px    ;
+}
+.grade ul li{
+
+    float: left;
+    margin-right: 70px;
+}
+.grade ul li a{
+    display: block;
+    font-size: 16px;
+    color: #868686;
+}
+
+.grade ul li a:hover{
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
+}
+
+.grade .look{
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+
+}
+/* 推荐栏结束 */
+.part3{
+     height: 390px;
+   
+}
+
+.part3 .box-l
+{
+    float: left;
+    width: 230px;
+    height: 390px;
+    margin-right: 10px;
+    
+     /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+    background:url(images/part3-1.png);
+}
+
+.part3 .box-r .img1{
+    height: 100px;
+    width: 960px;
+}
+.box-r ul li {
+    float: left;
+    width: 228px;
+    height: 275px;
+    margin-top: 10px;
+    margin-right: 12px;
+    background-color:#ffffff;
+     /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+     box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+.box-r ul li img{
+    width: 100%;
+}
+
+.box-r ul li h4{
+    margin: 25px 20px 0 20px;
+    font-size: 14px;
+    color: #050505;  
+    font-weight: 400;  
+}
+
+.box-r .info{
+    margin:20px 0 20px 20px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.box-r .info span
+{
+    color: #ff7c2d;
+}
+
+   /* 6精品推荐part3结束 */
+   /* 7精品推荐part4开始 */
+   /* 推荐栏开始 */
+.grade1{
+    height: 42px;
+    margin-top: 40px;
+
+}
+.grade1 h3{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.grade1 ul{
+    float: left;
+    margin-left: 355px    ;
+}
+.grade1 ul li{
+
+    float: left;
+    margin-right: 70px;
+}
+.grade1 ul li a{
+    display: block;
+    font-size: 16px;
+    color: #868686;
+}
+
+.grade1 ul li a:hover{
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
+}
+
+.grade1 .look1{
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+
+}
+/* 推荐栏结束 */
+.box1{
+    height: 270PX;
+   /*  margin-top: 10px; */
+   /*  background-color: #1c036c; */
+}
+
+/* 将ul的宽修改为能放要求盒子的宽度 */
+.box1 ul{
+    width:1225px;
+}
+
+.box-bd1 ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color:#ffffff;
+    margin-right:15px;
+    margin-bottom:15px;
+     /* 盒子阴影 水平，垂直 模糊子 颜色（用半透明色更好）*/
+     box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+         /* 4，精品推荐模块开始 */
+.box-bd1 ul li img{
+    width: 100%;
+}
+
+.box-bd1 ul li h4{
+    margin: 25px 20px 0 20px;
+    font-size: 14px;
+    color: #050505;  
+    font-weight: 400;  
+}
+
+.box-bd1 .info{
+    margin:20px 0 20px 20px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.box-bd1 .info span
+{
+    color: #ff7c2d;
+}
+   /* 7精品推荐part4结束 */
+
+   /* fooetr部分开始 */
+.footer{
+    margin-top: 40px;
+    height: 420px;
+    background-color:#fff;
+}
+
+.footer .mid{
+    padding-top: 40px;
+}
+
+.footer .copyright{
+    float: left;
+    width: 425px;
+}
+.footer .copyright img{
+    margin-bottom: 35px;
+}
+
+
+.footer .copyright h4{
+    font-weight: normal;
+    font-size: 12px;
+    line-height:20px;
+    color: #666666;
+}
+
+.footer .copyright a{
+    display: block;
+    width: 120px;
+    height: 35px;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    border: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+.footer .links
+{
+    float: right;
+}
+
+.links dl{
+    float:right;
+    margin-left:122px;
+}
+.links dt{
+    margin-bottom: 15px;
+    font-size: 16px;
+    color:#666666
+}
+
+.links dd a{
+    font-size: 12px;
+    line-height: 25px;
+    color: #666666;
+    color: #333;
+}
+   /* footer部分结束 */
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 需求：页面一打开 一个盒子就从左边走到右边 */
+        /* 1定义动画 0%和100% 还可以是from to */
+        
+        @keyframes move {
+            /* 开始状态 */
+            0% {
+                transform: translate(0px);
+            }
+            /* 结束状态 */
+            100% {
+                transform: translate(1000px);
+            }
+        }
+        
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            /* 2使用动画 */
+            /* 2.1调用动画 */
+            animation-name: move;
+            /* 2.2设置过渡的时间 */
+            animation-duration: 2s;
+        }
+    </style>
+</head>
+<!-- 1.先定义动画
+     2.再使用动画 -->
+
+<body>
+    <div></div>
+</body>
+
+</html>

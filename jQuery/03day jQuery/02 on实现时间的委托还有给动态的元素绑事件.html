@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>事件的委托</li>
+        <li>事件的委托</li>
+        <li>事件的委托</li>
+        <li>事件的委托</li>
+        <li>事件的委托</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function() {
+            // 1.事件的委托的操作就是 吧原来加在子元素的时间绑定在父元素的身上 就是将事件委派给父亲
+            $("ul").on("click", "li", function() {
+                alert($(this).index());
+            });
+
+            // 2.可以给未来创建的元素绑定事件
+            $("ol").on("click", "li", function() {
+                alert("后来创建的元素绑定的事件");
+            });
+            var li = $("<li>我是后面被创建的</li>");
+            $("ol").append(li);
+        });
+    </script>
+</body>
+
+</html>

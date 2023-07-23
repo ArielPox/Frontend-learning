@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /* 其中x与y的位置就是移动之后的位置/* ,可以单独移动一个指也可以 另个改为0就可以 还可以采取方法2*/
+            /* transform: translate(200px, 200px); */
+            /* 2.只移动x */
+            /*  transform: translateX(100px); */
+            /* 只移动y */
+            /*  transform: translateY(200px); */
+        }
+        /* 将p 盒子放在大盒子的垂直居中*/
+        
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            transform: translate(-50%, -50%);
+            /* 依次就是宽度与高度 */
+        }
+    </style>
+</head>
+<!-- 2D移动是2D转化的一种功能 可以改变元素在页面中的位置 
+    类似于定位但是它不会影响其他盒子色状态
+translate中里面的参数可以用%表示 但是移动的距离是自身的高度或者宽度 -->
+
+<body>
+    <div>
+        <p>
+
+        </p>
+    </div>
+</body>
+
+</html>

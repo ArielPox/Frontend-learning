@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        arr=[2,332,5,56,32,8,67];
+        function getMax(arr)
+        {
+            var max=0;
+            for(var i=0;i<arr.length;i++)
+            {
+                if(max<arr[i])
+                {
+                    max=arr[1];
+                }
+            }
+            return max;
+        }
+        // 实际的开发中会用一个变量来接受函数的返回结果
+        var ret=getMax([2,332,5,56,32,8,67]);
+        console.log(ret);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

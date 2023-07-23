@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 编码的原则就是将不安全的额字符转为安全的字符传输 之后在解码  浏览会自动的对URL进行编码
+        console.log("-----------编码明天是晴天");
+        console.log(encodeURI("明天是晴天"));
+
+        console.log("----------解码明天是晴天");
+        console.log(decodeURI(encodeURI("明天是晴天")));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('keyup',function()
+        {
+            console.log('弹起了keyup');
+            
+        })
+        // keypress不能识别功能键
+        document.addEventListener('keypress',function()
+        {
+            console.log('按下了keypress');
+        })
+        // keydown可以识别功能键
+        document.addEventListener('keydown',function()
+        {
+            console.log('按下了keydown');
+        })
+        // 三个键盘事件的执行的顺序keydown->keypress->keyup
+        
+    </script>
+</body>
+</html>

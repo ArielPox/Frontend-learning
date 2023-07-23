@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Object.keys(目标对象)这个方法可以将目标对象的所有的属性给遍历出来 -->
+
+<body>
+    <script>
+        // Object.defineProperty()定义对象中的新的属性或者修改原有 的属性 
+        var obj = {
+                id: 1,
+                name: "小米",
+                price: 1000
+            }
+            // 里面的三个值分别是：目标对象 目标对象的属性，{这里面就是修改的目标值，拥有四个特性：value enumerable writable configurable} 假如对象里面没有目标的属性 那么就会给对象做一个添加的操作
+        Object.defineProperty(obj, 'price', {
+            value: 999,
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'id', {
+            // 这个值的就是不允许修改这个值的意思里面的参数就会说true或者是false
+            writable: false
+        });
+        // id的值不能被修改成功
+        obj.id = 2;
+        console.log(obj);
+        Object.defineProperty(obj, 'address', {
+            value: "这是一新增的地址",
+            // 这个值的参数有true还有就是false 决定于能不能被遍历出来 并且这个参数的默认值就是false
+            enumerable: false,
+        });
+        console.log(obj);
+        // 新增的属性的enumerable的默认值就是false 所以在遍历时候不会出这个
+        console.log(Object.keys(obj));
+
+        Object.defineProperty(obj, 'num', {
+            value: 999,
+            // 这个参数的值有false还有true 规定的是目标属性能不能被删除 默认的的值是false 并且一旦设置这个特性 下面就不可以再修改目标属性的特性
+            configurable: false
+        });
+        console.log(obj);
+    </script>
+</body>
+
+</html>

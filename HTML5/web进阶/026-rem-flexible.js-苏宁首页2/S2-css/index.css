@@ -1,0 +1,68 @@
+body
+{
+    min-width: 4.2667rem;
+    max-width: 10rem;
+    width: 750px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #f2f2f2;
+}
+a{
+    text-decoration: none;
+    font-size: .3333rem;
+}
+
+/* 如果屏幕超过10rem就用750的设计稿 不会让页面超过10rem */
+@media screen and (min-width:750px){
+    html{
+        /* 提权 */
+        font-size: 75px!important;
+    }
+}
+
+.search-content{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.1733rem;
+    background-color: #FFC001;
+}
+
+.classify{
+    width: .5867rem;
+    height: .9333rem;
+    background-color: pink;
+    margin: .1467rem .3333rem .1333rem .3333rem;
+}
+
+.search{
+flex: 1;
+}
+
+.search input{
+    outline: none;
+    border: 0;
+    width: 100%;
+    height: .88rem;
+    font-size: .3333rem;
+    background-color: #FFF2CC;
+    margin-top: .13333rem;
+    border-radius: .44rem;
+    padding-left: .7333rem;
+    color: #ccc;
+}
+
+.login{
+    height: .9333rem;
+    width: 1rem;
+    margin: .1333rem;
+    /* background-color: rgb(115, 244, 137); */
+    color: #fff;
+    line-height: .9333rem;
+    text-align: center;
+}
+

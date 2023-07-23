@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js">
+    </script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button>淡入效果</button>
+    <button>淡出效果</button>
+    <button>淡入淡出效果</button>
+    <button>修改透明度</button>
+    <div></div>
+    <script>
+        //1.方法里面的数字是毫秒的意思
+        $(function() {
+            $('button').eq(0).click(function() {
+                // 淡入
+                $('div').fadeIn(1000);
+            });
+
+            $('button').eq(1).click(function() {
+                // 淡出
+                $('div').fadeOut(1000);
+            });
+            $('button').eq(2).click(function() {
+                // 淡入淡出切换
+                $('div').fadeToggle(1000);
+            });
+            $('button').eq(3).click(function() {
+                // 修改透明度 里面的速度还有透明度必须要写
+                $('div').fadeTo(1000, 0.5);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

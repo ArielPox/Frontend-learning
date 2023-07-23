@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // continue用于立即跳出本次循环 继续下次循环
+        for (i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue;
+            }
+            console.log('这是' + i + '个包子');
+        }
+        // 求1-100整数除了7的倍数的整数的和
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                continue;
+            }
+            sum += i;
+        }
+        console.log('1-100整数除了7的倍数的整数的和' + sum);
+
+        // break关键字立即跳出整个循环 循环结束
+        for (var i = 1; i <= 5; i++) {
+            if (i == 3) {
+                break;
+            }
+            console.log('吃第' + i + '个包子');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

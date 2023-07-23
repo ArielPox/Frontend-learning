@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../03day/lib/jquery.js"></script>
+</head>
+
+<body>
+    <input type="file" name="" id="files1">
+    <button id="btn">点击上传文件</button>
+    <br />
+
+    <img src="../03day/images/loading.gif" alt="" style="display: none;" id="loading">
+    <script>
+        $(function () {
+            // 只要监听到ajax发起请求就实现loading的样式
+            $(document).ajaxStart(function () {
+                $('#loading').show();
+            })
+
+            // 监听到ajax请求完毕时候隐藏loading样式
+            $(document).ajaxStop(function () {
+                $('#loading').hide();
+            })
+
+            $('#btn').on('click', function () {
+                // $('#files')[0]是为了转化为数组对象
+                let files = $('#files1')[0].files;
+                if (files.length <= 0) {
+                    return alert("选择文件");
+                }
+
+                let fd = new FormData();
+                fd.append('avatar', files[0]);
+
+                // 发起ajax请求
+                $.ajax({
+                    method: 'POST',
+                    url: 'https://www.liulongbin.top:3006/api/umpload/avatar',
+                    data: fd,
+                    // 不对formdata中的数据进行url编码,而是将formdata中的数据原样发送到服务器
+                    processData: false,
+                    contentType: false,
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

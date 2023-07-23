@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 200px;
+            width: 200px;
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 简单的动画函数的封装 obj就是封装的对象的 target就是目标的位置
+        function animate(obj,target)
+        {
+            var timer=setInterval(function(){
+                if(obj.offsetLeft>=target)
+                {
+                    // 停止动画 就是停止定时器
+                    clearInterval(timer);
+                }
+                obj.style.left=obj.offsetLeft+5+'px';
+            },30);
+        }
+
+        var div=document.querySelector('div');
+        animate(div,400);
+    </script>
+</body>
+</html>

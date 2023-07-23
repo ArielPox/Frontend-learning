@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/axios.js"></script>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script>
+        // axios是专注于网络数据请求的库 相比与XHR简单易用 相比于jQuery axios只专注于网络数据的请求 更加的轻量化
+        document.querySelector('#btn').addEventListener('click', function () {
+            let url = 'http://www/liulongbin.top.3006';
+            let params = {
+                name: "andy",
+                age: 12
+            };
+            // 发起请求get
+            axios.get(url, params)
+                .then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => {
+                    console.error(err);
+                })
+            axios.post(url, params)
+                .then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => {
+                    console.error(err);
+                })
+
+            // 直接使用axios发起ajax请求
+            axios({
+                method: 'POST',
+                url: url,
+                data: params, //指定的是POST时候的数据
+                params: params //指定的是get时候的数据
+            }).then(callback);
+        })
+    </script>
+</body>
+
+</html>

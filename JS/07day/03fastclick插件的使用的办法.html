@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script sre="js/fastclick.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 移动端的300毫秒的延时问题 原因就是移动端双击屏幕的话就缩放(double tap to zoom) 会有一个延时 //解决的方就是 禁止缩放 封装函数解决延迟的函数 这两个方法都会有问题 或者是比较麻烦 就提出了fastclick 插件 实际导航就是一个JS 的文件 -->
+    <div>
+    </div>
+    <!-- 使用的方法 -->
+    <script>
+        if ('addEventListener', function() {
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    FastClick.attach(document.body);
+                }, false);
+            });
+        var div = document.querySelector('div');
+        div.addEventListener('click', function() {
+            alert("无延迟");
+        })
+    </script>
+
+</body>
+
+</html>

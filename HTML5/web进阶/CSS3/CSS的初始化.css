@@ -1,0 +1,53 @@
+/* 把所有标签的内外编剧清零 */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* em和i斜体的文字不倾斜 */
+em,i{
+    font-style: normal;
+}
+
+/* 将li 前面的小黑点去掉 */
+
+li{
+    list-style: none;
+}
+
+img{
+    border: 0;/* 照顾低版本浏览器取消图片的边框 */
+    vertical-align: middle;/* 取消图片底部有空白缝隙的问题 */
+}
+
+button{
+    cursor: pointer;/* 鼠标遇见按钮就变成小手 */
+}
+
+a{
+    text-decoration: none;/* 取消链接本来带的蓝色 */
+}
+
+button,input{
+    font-family: Microsoft YaHei,Heiti,SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53";/* 规定字体 */
+}
+
+body{
+    -webkit-font-smoothing:antialiased;/* 抗锯齿性 让文字显示更加清晰 */
+    background-color: #fff;
+    font:12px/1.5  Microsoft YaHei,Heiti,SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53";/* 规定字体 */
+color: #666;
+}
+
+/* 清除浮动 */
+.clearfix:after{
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content:".";
+    height: 0;
+}
+
+.clearfix{
+    *zoom:1;
+}

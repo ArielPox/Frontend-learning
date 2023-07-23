@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div getTime="20" data-index="2" data-list-name="andy"></div>
+    <script>
+        // 1.目的是为了保存并且使用数据
+        // 2.为了区分自定义属性还有内置的属性 H5规定了自定义的属性必须要有date-开头为属性并且赋值
+        var div = document.querySelector('div');
+        console.log(div.getAttribute('getTime'));
+
+        div.setAttribute('data-time', 20);
+        console.log(div.getAttribute('data-index'));
+        console.log(div.getAttribute('data-list-name'));
+        // h5新增加的获取自定义属性的方法就只可以获取date-开头的
+        // dataset是一个集合里面存放了以data开头的自定义属性
+        console.log(div.dataset);
+        console.log(div.dataset.index);
+        console.log(div.dataset['index']);
+        // 如果自定义的属性有多个-连接 那么获取的时候用的是驼峰命名法
+        console.log(div.dataset.listName);
+        console.log(div.dataset['listName']);
+
+
+    </script>
+</body>
+
+</html>

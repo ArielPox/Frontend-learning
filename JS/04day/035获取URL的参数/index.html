@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        console.log(location.search);//？uname=123
+        // 1.先去掉的是？substr('起始的位置','截取的字符')
+        var params=location.search.substr(1);//uname=123
+        console.log(params);
+        // 2.利用=将字符串分割成数组split('=');
+       var str=params.split('=');
+// 3.将输入的字符传入div
+var div=document.querySelector('div');
+div.innerHTML=str[1]+'欢迎您';
+
+
+    </script>
+</body>
+</html>

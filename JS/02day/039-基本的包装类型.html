@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'abbc';
+        console.log(str.length);//4
+        //问题： 对象再回有属性与方法 负责数据类型才会有属性还有方法 简单数据类型为什么会有length的属性呢
+        // (1)简单的数据类型包装为了复杂的数据类型 实现的原理如下
+        var temp = new String('abcd');
+        // (2)把临时的变量给str
+        str = temp;
+        // (3)销毁这个临时的变量
+        temp = null;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

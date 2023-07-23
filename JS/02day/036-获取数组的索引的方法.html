@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1,作用就是返回元素的索引号 从前面开始查找 如果有这个元素的返回的是该元素的索引号 没有的话就会返回-1
+        var arr = ['red', 'green', 'blue', 'pink', 'yellow'];
+        console.log(arr.indexOf('blue'));
+        console.log(arr.indexOf('qwe'));//-1
+
+        // 2.作用就是返回元素的索引号 从数组的后面开始查找 如果有这个元素的返回的是该元素的索引号 没有的话就会返回-1
+        console.log(arr.lastIndexOf('blue'));
+        console.log(arr.lastIndexOf('qwe'));//-1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

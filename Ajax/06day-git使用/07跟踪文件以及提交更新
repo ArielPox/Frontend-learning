@@ -1,0 +1,21 @@
+1.使用 git add 文件名跟踪一个文件
+git add filename
+
+2.运行git status命名就会看见 文件在changes to be committed 下面
+就证明文件已经被跟踪 并且添加进去的文件的前
+面会有一个绿色的A 
+
+3.输入一个clear可以将终端快速的清空
+
+4.对提交信息进行进一步的描述 之后git status
+git  commit -m "对提交的内容进一步的解释"
+
+
+5.向暂存区一次提交多个文件 git add . 就会将所有的文件一次添加到暂存区
+
+6.暂存区中移除文件 git reset HEAD filename  移出暂存器的文件的前面会有一个红色的M
+移出暂存器中所有的文件 git reset HEAD .
+
+
+7.1.将工作区->暂存区->git仓库区简化为工作区方法 git会自动的把已经跟踪过的文件全部的添加到暂存区并且提交
+git commit -a -m "描述消息"

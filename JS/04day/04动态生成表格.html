@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        // 1.先准备好数据，采用的是对象的方式进行存储的
+        var datas = [{
+            name: '老大',
+            subject: '数学',
+            score: 100
+        },
+        {
+            name: '老二',
+            subject: '数学',
+            score: 99
+        },
+        {
+            name: '老三',
+            subject: '数学',
+            score: 93
+        },
+        {
+            name: '老四',
+            subject: '数学',
+            score: 98
+        }];
+
+        // 1获取tbody
+        var tbody = document.querySelector('tbody');
+        // 2.给tbody 添加行还有列
+        for (var i = 0; i < datas.length; i++) {
+            // 创建行
+            var tr = document.createElement('tr');
+            // 添加行
+            tbody.appendChild(tr);
+            // 在每一行中添加列
+            for (var k in datas[i]) {
+                // 创建单元格
+                var td = document.createElement('td');
+                // 将单元格中的内容从对象数组中读取出来
+                td.innerHTML = datas[i][k];
+                // 添加单元格
+                tr.appendChild(td);
+            }
+
+            // for (var k in obj) {
+            //     k得到的是属性的名称
+            //     obj[k]得到的是属性的值
+            // }
+
+            // 添加删除操作的单元格
+            var td = document.createElement('td');
+            td.innerHTML = "<a herf='javascript:;'>删除</a>";
+            tr.appendChild(td);
+        }
+        // 删除的操作
+        var dele = document.querySelectorAll('a');
+        for (var i = 0; i < dele.length; i++) {
+            dele[i].onclick = function () {
+                // 点击删除的a就会将a当前所在行的父级的父级
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

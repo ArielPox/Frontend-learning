@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 要求当前的网页必须是使用ie最高的版本的内核来渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视口标签的设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!--[if lt IE 9]>
+             为了解决浏览器对新标签不识别的时候出现的问题 
+      <script src="https://cdn.jsdelivr.cn/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.cn/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>Bootstrap 101 Template</title>
+    <style>
+        .row>div{
+            height: 50px;
+            background:pink;
+        }
+    </style>
+    </head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- 列嵌套的话最好加上一个行可以取消父元素的padding值 
+            而且高度与父亲一样高-->
+            <div class="row">
+                <div class="col-md-6">0</div>
+                <div class="col-md-6">0</div>
+            </div>
+        </div>
+        <div class="col-md-4">2</div>
+        <div class="col-md-4">3</div>
+    </div>
+</div>
+</body>
+
+</html>

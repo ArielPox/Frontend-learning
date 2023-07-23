@@ -1,0 +1,586 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 实现rem的适配 */
+
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 42.66px !important;
+    }
+}
+
+@media screen and (min-width:1920px) {
+    html {
+        font-size: 80px !important;
+    }
+}
+
+
+/* 让所有的斜体不倾斜 */
+
+em,
+i {
+    font-style: normal;
+}
+
+
+/* 去掉列表前面的小点 */
+
+li {
+    list-style: none;
+}
+
+
+/* 图片没有边框 */
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+
+/* 当鼠标经过按钮的时候就会变成小手 */
+
+button {
+    cursor: pointer;
+}
+
+
+/* 清除下划线 */
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e33333;
+}
+
+body {
+    background: url(../images/bg.webp) no-repeat;
+    background-size: cover;
+}
+
+.viewpoint {
+    display: flex;
+    min-width: 12.8rem;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: .1rem .5rem 0 .5rem;
+    min-height: 12.25rem;
+}
+
+.viewpoint .column {
+    flex: 3;
+    background-color: rgba(193, 251, 142, 0.3);
+}
+
+.viewpoint .column:nth-child(2) {
+    flex: 4;
+}
+
+
+/* 公共面板的样式 */
+
+.panel {
+    border: 15px solid #e33333;
+    border-width: .275rem .4125rem .25rem .375rem;
+    border-image-source: url(../images/bord.png);
+    border-image-slice: 35 75 35 60;
+    border-image-repeat: round;
+    margin: .25rem;
+}
+
+.panel h3 {
+    font-size: .25rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+/* 概览区模块制作 */
+
+.overview {
+    height: 1.375rem;
+}
+
+.overview ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview ul li h4 {
+    text-align: center;
+    font-weight: 400;
+    font-size: .35rem;
+    color: #fff;
+    margin: 0 0 .1rem .06rem;
+}
+
+.overview ul li span {
+    font-size: .2rem;
+    color: #4c9bfd;
+}
+
+
+/* 监控区域的模块 */
+
+.monitor {
+    height: 6rem;
+    overflow: hidden;
+}
+
+.monitor .inner {
+    padding: .3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.monitor .tabs {
+    padding: 0 .45rem;
+    margin-bottom: 0.255rem;
+    display: flex;
+}
+
+.monitor .tabs a {
+    color: #1950c4;
+    font-size: .225rem;
+    padding: 0 0.3375rem;
+}
+
+.monitor .tabs a:first-child {
+    padding-left: 0;
+    border-right: 0.025rem solid #00f2f1;
+}
+
+.monitor .tabs .active {
+    color: #fff;
+}
+
+.monitor .content {
+    flex: 1;
+    position: relative;
+    display: none;
+}
+
+.monitor .head {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    background-color: rgba(255, 255, 255, .1);
+    color: #61a8ff;
+    padding: 0.15rem 0.45rem;
+}
+
+.monitor .head span {
+    text-align: center;
+}
+
+.monitor .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitor .row span {
+    text-align: center;
+}
+
+.monitor .row .icon-dot {
+    position: absolute;
+    left: .2rem;
+    opacity: 0;
+}
+
+.monitor .row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #68d8fe;
+}
+
+.monitor .row:hover .icon-dot {
+    opacity: 1;
+}
+
+
+/* .monitor .col:first-child {
+    width: 1rem;
+} */
+
+
+/* 
+.monitor .col:nth-child(2) {
+    width: 2.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.monitor .col:nth-child(3) {
+    width: 1 rem;
+} */
+
+.marquee-view {
+    overflow: hidden;
+}
+
+
+/* 通过动画进行marquee的滚动 */
+
+.marquee-view .marquee {
+    animation: move 15s linear infinite;
+}
+
+@keyframes move {
+    0% {}
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+
+/* 鼠标经过的时候 会暂停marquee的滚动 */
+
+.marquee-view .marquee:hover {
+    animation-play-state: paused;
+}
+
+
+/* 点位 */
+
+.point {
+    height: 4.12rem;
+}
+
+.point .chart {
+    display: flex;
+    margin-top: 0.1rem;
+    justify-content: space-between;
+}
+
+.point .pie {
+    width: 3.9rem;
+    height: 3rem;
+    margin: .125rem .125rem .125rem;
+    /* background-color: pink; */
+}
+
+.point .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 3rem;
+    margin: .125rem .125rem .125rem;
+    width: 2.1rem;
+    padding: .45rem .375rem;
+    box-sizing: border-box;
+    background-color: rgba(225, 225, 225, 0.3);
+    background-size: cover;
+}
+
+.point h4 {
+    margin-bottom: .15rem;
+    font-size: .35rem;
+    color: #fff;
+}
+
+.point span {
+    display: block;
+    color: #4c9bfd;
+    font-size: .2rem;
+}
+
+
+/* column2 */
+
+
+/*地图的布局内容 */
+
+.map {
+    height: 7.8rem;
+    margin-bottom: .3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.map h3 {
+    font-size: .3rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    padding: .3rem 0;
+}
+
+.icon-qie {
+    color: aqua;
+}
+
+.map .chart {
+    flex: 1;
+    background: rgba(225, 225, 225, .1);
+}
+
+.map .gep {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 用户 */
+
+.users {
+    height: 4.1rem;
+}
+
+.users .chart {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.users .bar {
+    width: 6rem;
+    height: 10rem;
+}
+
+.user .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 7rem;
+    box-sizing: border-box;
+    padding: .5rem .5rem;
+    background-color: rgba(172, 188, 240, 0.2);
+}
+
+.user h4 {
+    color: #fff;
+    font-size: .5rem;
+    margin-bottom: .25rem;
+}
+
+.user span {
+    color: #4c9bfd;
+    font-size: .4rem;
+}
+
+
+/* 订单的区域 */
+
+.order {
+    height: 1.5rem;
+}
+
+.order .filter {
+    display: flex;
+}
+
+.filter {
+    flex: 4;
+    justify-content: space-between;
+}
+
+.order .filter a {
+    display: block;
+    height: .3rem;
+    line-height: 1;
+    color: #4c9bfd;
+    padding: 0 0.2rem;
+    font-size: .25rem;
+    border-right: .002rem solid #00f2f1;
+}
+
+.order a:first-child {
+    padding-left: 0;
+}
+
+.order .filter a {
+    border-right: 0;
+}
+
+.order.filter a .active {
+    color: #fff;
+    font-size: .2rem;
+}
+
+.order .item {
+    width: 50%;
+}
+
+.order .data {
+    display: flex;
+    margin-top: .1rem;
+}
+
+.order h4 {
+    font-weight: 400;
+    font-size: .3rem;
+    color: #fff;
+}
+
+.order span {
+    color: #61a8ff;
+    font-size: .2rem;
+}
+
+
+/* 销售部分 */
+
+.sales {
+    height: 3.5rem;
+}
+
+.caption {
+    display: flex;
+}
+
+.sales h3 {
+    border-right: .02rem solid #00f2f1;
+    padding-right: 0.15rem;
+    height: 0.35rem;
+}
+
+.sales a {
+    padding: .05rem;
+    font-size: .15rem;
+    color: #4c9bfd;
+    border-radius: .05rem;
+    margin: -.05rem 0 0 .4rem;
+}
+
+.sales .active {
+    background: #4c9bfd;
+    color: #fff;
+}
+
+.sales .inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.sales .chart {
+    flex: 1;
+    padding: 0 .3rem;
+    position: relative;
+}
+
+.sales .chart .lable {
+    position: absolute;
+    left: .55rem;
+    top: .05rem;
+    color: #4996f5;
+    font-size: .2rem;
+}
+
+.sales .line {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* 渠道 季度 */
+
+.wrap {
+    display: flex;
+}
+
+.wrap .channel,
+.wrap .quarter {
+    flex: 1;
+    height: 2.5rem;
+}
+
+.wrap .channel {
+    margin-right: .2rem;
+}
+
+.channel .data {
+    overflow: hidden;
+}
+
+.channel .item {
+    margin-top: .2rem;
+}
+
+.channel .item:first-child {
+    float: left;
+}
+
+.channel .item:first-child {
+    float: right;
+}
+
+.channel h4 {
+    color: #fff;
+    font-size: .2rem;
+}
+
+.channel small {
+    font-size: 50%;
+}
+
+.channel span {
+    color: #4c9bfd;
+    font-size: .15rem;
+}
+
+
+/* 季度 */
+
+.quarter {
+    display: flex;
+    flex-direction: column;
+}
+
+.quarter .chart {
+    flex: 1;
+    padding-top: .2rem;
+}
+
+.quarter .box {
+    position: relative;
+}
+
+.quarter .gauge {
+    height: .1rem;
+}
+
+.quarter .lable {
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, 5%);
+    color: #fff;
+    font-size: .3rem;
+}
+
+.quarter .data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quarter .item {
+    width: 50%;
+}
+
+.quarter h4 {
+    color: #fff;
+    font-size: .25rem;
+    margin-top: .4rem;
+}
+
+.quarter span {
+    width: 100%;
+    text-align: center;
+    font-size: .1rem;
+    color: #4c9bfd;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.show {
+    display: none;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.引入templatede -->
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/template-web.js"></script>
+
+</head>
+<!-- tempalte的标椎的语法就是{{}} 将要填充的内容直接放入括号 -->
+<!-- 1、原文输出{{@ value}} -->
+
+<body>
+    <div class="container"></div>
+    <script type="text/html" id="user">
+        <!-- 3.定义一个模版 并且模版一定要定义在scritp的标签的里面 -->
+    <h1> {{name}} ----------- {{age}}</h1>
+    </script>
+
+    <script>
+        // 2.定义需要渲染的数据
+        let data = {
+            name: "Andy",
+            age: 12
+        };
+        // 4.调用template函数
+        let tem = template('user', data);
+
+        //5.渲染html结构
+        $("#container").html(tem);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+
+    <style>
+        body {
+            height: 2000px;
+        }
+        
+        .back {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            right: 30px;
+            bottom: 100px;
+            display: none;
+        }
+        
+        .container {
+            width: 900px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 400px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back">返回顶部</div>
+    <div class="container">
+    </div>
+    <script>
+        $(function() {
+            //一刷新页面就设置头部距离上部分100px
+            $(document).scrollTop(100);
+
+            // 被卷的头部scrollTop()/被卷去的右边 scrollLeft()
+            // 页面的滚动事件
+            var boxTop = $(".container").offset().top;
+            $(window).scroll(function() {
+                console.log($(document).scrollTop());
+                if ($(document).scrollTop() >= boxTop) {
+                    $(".back").fadeIn();
+                } else {
+                    $(".back").fadeOut();
+                }
+            });
+            // 带有动画的返回顶部
+            $(".back").click(function() {
+                $("body,html").stop().animate({
+                    scrollTop: 0
+                });
+            });
+
+            // 动画只能是html或者是body的元素做 不可以是文档做
+
+            // $(".back").click(function() {
+            //     $(document).stop().animate({
+            //         scrollTop: 0
+            //             // });
+            //     });
+            // });
+        });
+    </script>
+</body>
+
+</html>

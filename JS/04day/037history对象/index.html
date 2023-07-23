@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="list.html">点击后退页面</a>
+    <button>后退</button>
+    <script>
+        // history.forward();
+        // history.back();
+        // history.go(前进正整数 后退负整数)；
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            history.go(-1);
+        })
+    </script>
+</body>
+
+</html>

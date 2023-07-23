@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 排除了其他的人 之后再设置自己的样式 -->
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        // 获取元素
+        var btn = document.getElementsByTagName('button');
+        // 2.btn是一个伪数组 里面的每一个元素用btn[i]表示
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                // 先把所有的背景颜色去掉 
+                for (var j = 0; j < btn.length; j++) {
+                    btn[j].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'green'
+            }
+        }
+    </script>
+</body>
+
+</html>

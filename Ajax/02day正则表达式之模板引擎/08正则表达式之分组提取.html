@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在正则表表达式里面（）就表示一个分组
+        let str = '<div>我是{{name}}</div>';
+        // 通过下面的分组提取到自己的想要的内容
+        let pattern = /{{([a-zA-Z]+)}}/;
+        let result = pattern.exec(str);
+        console.log(result);
+    </script>
+</body>
+
+</html>

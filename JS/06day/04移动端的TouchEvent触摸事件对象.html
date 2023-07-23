@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+        div{
+    width: 300px;
+    height: 300px;
+    background-color: green;
+    }
+   </style>
+    </style>
+    <script>
+        // TouchEvent其实就是描述手指在触摸屏幕的时候的状态是什么样子的 手指的个数 移动 触点 的增加还有减少等
+        // touches值得是正在触摸屏幕的左右的手指的列表
+        // targetTouches指的是触摸当前元素的手指的一个列表
+        // changeTouches手指的状态发生了变化 也就是从无到有 从有到无
+        window.addEventListener('load', function () {
+            //1. 获取元素
+            var div = document.querySelector('div');
+            // 2.手指触摸dom元素的事件
+            div.addEventListener('touchstart', function (e) {
+                // targetTouches[0]可以的到正在触摸DOM元素的第一个手指头的相关信息 比如手指的坐标等等
+                console.log(e);
+            });
+
+            div.addEventListener('touchmove', function (e) {
+                console.log('滑动着触摸');
+            });
+            div.addEventListener('touchend', function (e) {
+                console.log(e);
+                // 当手指离开的时候就没有touches还有targetTouches 但是会有changedTouches
+            });
+        })
+    </script>
+</head>
+
+<body>
+<div></div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 封装一个函数对象data转化为字符串返回
+        let obj = {
+            name: "andy",
+            age: 12
+        };
+
+        function resolveData(data) {
+            var arr = [];
+            for (let i in data) {
+                arr.push(i + '=' + data[i]);
+            } // 将对象中的属性拼接起来
+            return arr.join('&');
+        }
+
+        // console.log(resolveData(obj));
+
+
+        // 封装自己的函数
+        function myAjax(options) {
+            let xhr = new XMLHttpRequest();
+            // 将外界传入的数据 转化为查询字符串
+            let str = resolveData(options.data);
+
+            // 判断发起的指令
+            if (options.method.toUpperCase() === 'GET') {
+                // 发起的是GET请求
+                console.log("发起GET");
+                xhr.open(options.method, options.url + '?' + str);
+                xhr.send();
+            } else if (options.method.toUpperCase() === 'POST') {
+                console.log("发起POST");
+                xhr.open(options.method, options.url + '?' + str);
+                xhr.setRequestHeader('ConTent-Type', 'application/x-www-form-urlencoded');
+                xhr.send(str);
+            }
+
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status == 200) {
+                    // 监听成功服务器响应成功
+                    let result = JSON.parse(xhr.responseText);
+                    options.success(result);
+                }
+            }
+        }
+
+        // 测试
+        let test = {
+            method: 'get',
+            url: 'http://www/liulonhbin.top:3006/api/getbooks',
+            data: {
+                id: 1,
+                name: "andy",
+                age: 12
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        }
+
+        myAjax(test);
+    </script>
+</body>
+
+</html>

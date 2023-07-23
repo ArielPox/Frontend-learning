@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 音频标签 -->
+    <!--谷歌游览器将autopaly的属性禁用了
+    属性；controls 向用户展示控价 比如播放按钮
+loop 重复播放饮音频
+autoplay 音频在就绪之后立即播放-->
+    <audio src="#" controls="controls" loop="loop" autoplay="autoplay"></audio>
+    <!-- 为了解决不同的浏览器需要的音频格式不同一下有采取的方式 -->
+    <audio controls="controls" height="100" width="100">
+        <source src="song.mp3" type="audio/mp3" /><!-- 一个source就是一个选择 如果两个都支持 就只会播放一个 -->
+        <source src="song.ogg" type="audio/ogg" />
+    </audio>
+
+    <!-- 视频标签 -->
+    <!-- 属性有 autoplay（但是谷歌游览器禁止自动播放的属性 解决方案就是添加muted=“muted”静音属性就可以） controls loop  
+    height width preload:auto(预先加载视频)|none(不加载视频)若有了autoplay 就可以忽略这个属性
+poster：imgurl加载等待的画面 -->
+    <video src="media/video1.mp4" controls="controls" loop="loop" autoplay="autoplay">
+    </video>
+    <!-- 不同的浏览器的视频支持的格式是不同的 解决方案如下 -->
+    <video width="320" height="240" controls="controls">
+        <source src="movie.mp4" type="video/mp4" />
+        <source src="movie.ogg" type="video/ogg" />
+        <source src="movie.webm" type="video/webm" />
+      Yor browser does not support the video tag.u
+    </vide>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box ul li {
+
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            border: 1px solid red;
+            margin-left: -1px;
+        }
+
+        .box ul li:hover {
+            /* 如果盒子没有定位添加相对定位即可 */
+            position: relative;
+            border: 1px solid blue;
+        }
+
+        /* 如果盒子有定位 鼠标进过提高它的层级就可以*/
+        .box ul li:hover {
+            z-index: 3;
+            border: 1px solid blue;
+
+        }
+        
+    </style>
+</head>
+<!-- margin的负值可以将盒子间浮动的时候边框合并的问题解决 (实际我写出来的并没有解决 但是理论上是对的 网课上也是对的)-->
+
+<body>
+   <div class="box">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+   </div>
+</body>
+
+</html>

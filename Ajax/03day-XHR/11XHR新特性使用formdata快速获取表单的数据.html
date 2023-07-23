@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="form1">
+        <input type="text" name="uname" id="" autocomplete="off">
+        <input type="password" name="psw" id="">
+        <button type="submit"> 提交</button>
+    </form>
+
+    <script>
+        // 1.通过dom操作获取表单元素
+        let form1 = document.querySelector('#form1');
+
+        form1.addEventListener('submit', function (e) {
+            //阻止表单默认提交行为
+            e.preventDefault();
+
+            // 创建formdata快速获取表单元素中的数据
+            let fd = new FormData(form1);
+
+            // 3.创建xhr对象
+            let xhr = new XMLHttpRequest();
+
+            // 4.指定请求的类型与url地址
+            xhr.open('POST', 'http://www/liulongbin.top.3006./api/formdata');
+
+            // 5.直接提交formdata对象 
+            xhr.send(fd);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

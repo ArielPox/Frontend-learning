@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.对象的创建方式 var 对象名称={}
+        var obj = {
+            name: '张三',
+            age: 18,
+            sex: '男',
+            sayHi: function () {
+                console.log('你好啊')
+            }
+        }
+        // 1.1 里面的属性采用的是键值对的方式 键 属性名：值
+        // 1.2多个属性用的是逗号隔开
+
+        // 2.使用对象
+        // 2.1：对象名称.属性名称
+        console.log(obj.name);
+        // 2.2:对象名['属性名']
+        console.log(obj['age']);
+        // 2.3调用对象的方法的 对象名.方法名()
+        obj.sayHi();
+
+        // 3.利用new Object创建对象 利用的是等号方法给属性赋值 属性之间用分号隔开
+        var obj1 = new Object();
+        // 追加属性
+        obj1.name = '李四';
+        obj1.age = 20;
+        obj1.sex = '女';
+        obj1.func = function () {
+            console.log('hello');
+        }
+        // 调用
+        console.log(obj1.name);
+        console.log(obj1.func());
+
+        // 4.利用构造函数创建对象 利用函数的方法重复相同的代码 这个函数就是被称为构造函数 
+        // 4.1构造函数的语法格式 func 构造函数名(){} 构造函数的名称首字母要统一大写
+        function Start(uname, uage, usex) {
+            this.name = uname;
+            this.age = uage;
+            this.sex = usex;
+            this.sing = function (sang) {
+                console.log(sang);
+            }
+        }
+        // 4.2使用 new 构造函数名()
+        var g = new Start('古天乐', 33, '男')
+        console.log(g.name);
+        g.sing('明日战记');
+        console.log(g.sing())
+        // 4.3 调用构造函数就必须使用new 不需要返回return
+
+        // 5.new关键字的执行过程 new 构造函数在内存中创建了一个空的对象 this 就会指向刚才创建额空对象 构造函数里面的代码就是给这个空的对象添加属性与方法 之后就是返回这个对象 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

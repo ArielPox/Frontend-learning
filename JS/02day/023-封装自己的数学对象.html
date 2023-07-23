@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var myMath = {
+            PI: 3.141592653,
+            // 取出数组中最大的数
+            max: function () {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            // 取出数组中最小的数
+            min: function () {
+                var min = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        }
+
+        // 使用方式
+        console.log(myMath.PI);
+        console.log(myMath.min(1, 2, 1, 2, 54, 765, 34, -5));
+        console.log(myMath.max(1, 2, 1, 2, 54, 765, 34, -5));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            height: 600px;
+            border: 2px solid rgb(172, 57, 57);
+            background: url("CSS3/images/xlz.png") no-repeat;
+            /* 1.只写一个参数 会等比缩放 */
+            /* background-size: 600px; */
+            /* 2.里面的参数可以写百分数 是相当父元素的*/
+            /* background-size: 50%; */
+            /* 3.cover参数 完全覆盖盒子 可能只可以看见部分图片 */
+            /* background-size: cover; */
+            /* 4.contain参数 当背景图放到与盒子同宽度或者同样的高度时候就停止放大 可能有部分空白的区域 */
+            background-size: contain;
+
+        }
+    </style>
+</head>
+<!-- background-size属性规定了背景图像的尺寸 -->
+<!-- 语法：background-size：背景图片的高 背景图片的宽 -->
+<body>
+    <div></div>
+</body>
+</html>

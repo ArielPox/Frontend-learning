@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move1 {
+            0% {
+                transform: translate(0px);
+            }
+            25% {
+                transform: translate(1000px, 0px);
+            }
+            50% {
+                transform: translate(1000px, 300px);
+            }
+            75% {
+                transform: translate(0px, 300px);
+            }
+            100% {
+                transform: translate(0px);
+            }
+        }
+        
+        .box {
+            height: 80px;
+            width: 80px;
+            background-color: green;
+            /* 2使用动画 */
+            /* 2.1调用动画 */
+            animation-name: move1;
+            /* 2.2设置过渡的时间 */
+            animation-duration: 10s;
+            /* 2.3设置动画的运动曲线 */
+            animation-timing-function: ease;
+            /* 2.4规定动画什么时候开始 */
+            animation-delay: 2s;
+            /* 2.5规定动画的播放次数 默认是1 还可以写infinite */
+            animation-iteration-count: infinite;
+            /* 2.6规定动画的逆播放 默认是normal 如果要逆播放就是 alternate */
+            animation-direction: alternate;
+            /* 2.7规定动画结束之后的状态 保持forward 回到起始就是backward 
+            animation-fill-mode:backward*/
+        }
+        
+        .box:hover {
+            /* 2.8规定动画暂停或者是运动  */
+            /* 要求鼠标一放上去就暂停 离开就开始运动 running 就是开始运动的意思 */
+            animation-play-state: paused;
+        }
+        /*属性的简写  animation: name duration timing-function delay iteration-count direction fill-mode;
+         */
+        
+        .box2 {
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            animation: move1 10s linear 1s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

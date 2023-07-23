@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .current {
+            height: 200px;
+            width: 300px;
+            background-color: rgb(24, 185, 62);
+            border: 10px solid salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function() {
+            // // 1.单个点击的事件注册
+            // $("div").click(function() {
+            //     $(this).css("background", "purple");
+            // });
+
+            // $("div").mouseenter(function() {
+            //     $(this).css("background", "blue");
+            // })
+
+            // 2.事件处理on 这样的好处就是 可以一次处理多个事件
+            // $("div").on({
+            //     mouseenter: function() {
+            //         $(this).css("background", "blue");
+            //     },
+            //     mouseleave: function() {
+            //         $(this).css("background", "purple");
+            //     }
+            // });
+
+            // 3.多个事件对应了一样的样式的改变 还可以向下面那样
+            $("div").on("mouseenter mouseleave", function() {
+                $(this).toggleClass("current");
+            })
+        })
+    </script>
+</body>
+
+</html>

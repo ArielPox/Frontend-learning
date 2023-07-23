@@ -1,0 +1,100 @@
+{
+  "id": "3515019",
+  "name": "测试",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "30252781",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "30252782",
+      "name": "file",
+      "font_class": "file",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "30252783",
+      "name": "cloud",
+      "font_class": "cloud",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "30252784",
+      "name": "chart",
+      "font_class": "chart",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "30252785",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "30252786",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "30252787",
+      "name": "likes",
+      "font_class": "likes",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "30252788",
+      "name": "pie",
+      "font_class": "pie",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "30252789",
+      "name": "alert",
+      "font_class": "alert",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "30480175",
+      "name": "策略设置",
+      "font_class": "celveshezhi",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "30480177",
+      "name": "更多模块",
+      "font_class": "gengduomokuai",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "30480178",
+      "name": "短信包",
+      "font_class": "duanxinbao",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "30480179",
+      "name": "订单管理",
+      "font_class": "dingdanguanli",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JQuery.min.js"></script>
+    <style>
+        div {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 就是接受函数作为参数或者是返回一的是一个函数的函数就会称之为高阶函数  典型的就是回调函数-->
+    <div></div>
+    <script>
+        // 1.函数可以作为参数传递进去
+        function f(a, b, callback) {
+            console.log(a + b);
+            callback && callback();
+        }
+        f(1, 2, function() {
+            console.log("我是回调函数中调用的")
+        });
+        $('div').animate({
+            left: 500
+        }, function() {
+            $('div').css('backgroundColor', 'purple');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.5s;
+        }
+        
+        .current {
+            background-color: green;
+            transform: rotate(270deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        // 1.添加类
+        // $('div').click(function() {
+        // $(this).addClass('current');？
+        // });
+        // 2.删除类
+        // $('div').click(function() {
+        //     $(this).removeClass('current');
+        // });
+        //3.切换类 点一下就会添加类 再点一下又取消添加
+        $('div').click(function() {
+            $(this).toggleClass('current');
+        });
+    </script>
+</body>
+
+</html>

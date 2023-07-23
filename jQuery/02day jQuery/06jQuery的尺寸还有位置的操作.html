@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 15px solid red;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function() {
+            // 1.width()/height()设置元素的宽还有高的大小
+            console.log($("div").width());
+            $("div").width(300); //将宽修改为300像素
+
+            // 2.innerWidth()/innerHeight() 获取的是width/height+padding的大小
+            console.log($("div").innerWidth());
+
+            // 3.outerWidth()/outerHeight() 获取设置元素width/height+padding+border大小
+            console.log($("div").outerHeight());
+
+            // 4.outerWidth(true)/outerHeight(true) 获取的是元素的width/height+padding+margin+border
+            console.log($("div").outerHeight(true))
+        });
+    </script>
+</body>
+
+</html>

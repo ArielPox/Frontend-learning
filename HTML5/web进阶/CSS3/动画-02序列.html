@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1定义动画 0%和100% 还可以是from to */
+        
+        @keyframes move {
+            /* 开始状态 */
+            0% {
+                transform: translate(0px);
+            }
+            /* 结束状态 */
+            100% {
+                transform: translate(1000px, 0);
+            }
+        }
+        /* 其中的百分数就是对调用的时候的时间的划分 */
+        
+        @keyframes move1 {
+            0% {
+                transform: translate(0px);
+            }
+            25% {
+                transform: translate(1000px, 0px);
+            }
+            50% {
+                transform: translate(1000px, 300px);
+            }
+            75% {
+                transform: translate(0px, 300px);
+            }
+            100% {
+                transform: translate(0px);
+            }
+        }
+        
+        .box {
+            height: 80px;
+            width: 80px;
+            background-color: green;
+            /* 2使用动画 */
+            /* 2.1调用动画 */
+            animation-name: move1;
+            /* 2.2设置过渡的时间 */
+            animation-duration: 10s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

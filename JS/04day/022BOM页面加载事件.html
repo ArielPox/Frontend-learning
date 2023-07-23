@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.传统的方式
+        // 窗口加载页面：window.onload是窗口(页面)加载事件 当文档中的内容全部都加载出来会触发该事件(包含图片 脚本文件 css文件等)，就调用处理的函数
+        // 有了window,onload就可以将js的代码写在页面元素的上方 因为onload是等待页面的元素全部加载完成之后再去执行处理函数
+        // 这种传统的注册事件的方式只可以写一次 如果多次写的话 就会以最后的一个window.onload 为准
+
+        // window.onload = function () {
+        //     var btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //         alert('点击')
+        //     })
+        // }
+
+        //2.新型的方法window.addEventListener 这样的方法可一多次的使用window.onload的方法
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('点击')
+            })
+        }
+        )
+
+        //3. document.addEventListener('BOMContentLoaded',function(){js代码});这个方法也就是类似于window.onload 但是仅仅是DOM加载完成 是不包括样式表 图片 还有flash等 但是只有ie9以上才会支持  适合在页面中很多的图片适合使用 更加的快一点
+        document.addEventListener('BOMContentLoaded', function () { });
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+
+</body>
+
+</html>

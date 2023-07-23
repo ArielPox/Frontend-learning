@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 50%;
+            /* 垂直居中 */
+            margin-top: -100px;
+            /* 垂直居中 */
+            left: 50%;
+            /* 水平居中走父容器的一半 */
+            margin-left: -100px;
+            /* 水平居中向左走自己宽度的一半 */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+        }
+        /* 行内元素添加了绝对定位或者固定定位 可以直接设置高度和宽度 */
+        span{
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+
+        /* 块级元素添加了绝对或者固定定位 如果不给宽度或者高度默认大小是内容大小 */
+        .box1{
+            position: absolute;          /*大小默认为内容大小 */
+            background-color:pink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box"></div>
+    <span>123</span>
+    <div class="box1">abcd</div>
+</body>
+
+</html>

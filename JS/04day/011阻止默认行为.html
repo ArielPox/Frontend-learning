@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://www.baidu.com/?tn=02003390_25_hao_pg">百度</a>
+    </div>
+
+    <script>
+        // 1.返回事件的类型
+        var div = document.querySelector('div');
+        div.addEventListener('click', fu);
+        div.addEventListener('mouseover', fu);
+        div.addEventListener('mouseout', fu);
+        function fu(e) {
+            console.log(e.type);
+        }
+
+        // 2.阻止默认的行为(事件) 让链接不跳转 或者是提交按钮不提交
+        var a = document.querySelector('a');
+        a.addEventListener('click', function (e) {
+            e.preventDefault();//dom推荐的写法
+        })
+        // 3.传统的注册的方式
+        a.onclick = function (e) {
+            // 普通浏览器  方法
+            e.preventDefault();
+            // 低版本的浏览器 returnValue  属性
+            e.returnValue;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. 创建一个xhp对象
+        let xhr = new XMLHttpRequest();
+
+        //2.调用open function
+        xhr.open('GET', 'http://www/liulongbin.top.3006./api/getbooks');
+
+        // 3.调用send函数
+        xhr.send();
+
+        // 4.监听onreadystatechange事件
+        xhr.onreadystatechange = function () {
+            //监听事件一服务器响应成功的判断为真之后在进行下一步的操作
+            if (xhr.readyState === 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+            }
+        }
+
+        // xhr.readyState表示的是当前的ajax请求的状态
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 语法 
+        // while(条件表达式){执行语句}
+        // 1.打印人的一生 1-100
+        var i=1;
+        while(i<=100)
+        {
+            console.log('此人今年'+i+'岁了');
+            i++;
+        }
+        // 2.计算1-100的整数和
+        var sum=0;
+        var j=1;
+        while(j<=100)
+        {
+            sum+=j;
+            j++;
+        }
+        console.log('计算1-100的整数和为'+sum);
+        // 3.弹出一个警示框 今天开心吗 如果输入开心就退出 否则就一直问
+        var str2='';
+        while(true)
+        {
+            str2=prompt('今天开心吗？ 回答开心或者不开心');
+            if(str2=='开心')
+            {
+                break;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

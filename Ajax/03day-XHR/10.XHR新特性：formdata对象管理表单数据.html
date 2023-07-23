@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.新建表单对象
+        let fd = new FormData();
+
+        // 2.为表单对象添加表单项 第一个参数是键 第二个参数是值
+        fd.append('name', 'andy');
+        fd.append('age', '12');
+
+        // 3.创建xhr对象
+        let xhr = new XMLHttpRequest();
+
+        // 4.指定请求的类型与url地址
+        xhr.open('POST', 'http://www/liulongbin.top.3006./api/formdata');
+
+        // 5.直接提交formdata对象 
+        xhr.send(fd); //直接就可以产生渲染的效果
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        }
+    </script>
+</body>
+
+</html>

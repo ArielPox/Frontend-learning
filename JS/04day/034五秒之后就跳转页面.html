@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    </div>
+    <script>
+        var div=document.querySelector('div');
+        var timer=5;
+        setInterval(function()
+        {
+            if(timer==0)
+            {
+                // 跳转页面
+                location.href='http://www.itcast.cn';
+
+            }
+            else{
+                div.innerHTML='您将在'+timer+'秒之后就会跳转';
+                timer--;
+            }
+        },1000);
+    </script>
+</body>
+</html>

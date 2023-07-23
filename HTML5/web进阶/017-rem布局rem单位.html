@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            html{
+                font-size: 12px;
+            }
+        div{
+            width: 12rem;
+            height: 12rem;
+            background-color: purple;
+        }
+        p{
+            /* 1.em是相当于父元素的字体大小来说的 */
+            /* width: 10em;
+            height: 10em; */
+            background-color: pink;
+            /* 2.rem相对于html元素的字体大小来说的 */
+            width: 10rem;
+            height: 10rem;
+            /* 3.rem 的优点就是可以通过修改html里面的的文字大小来改变页面中的元素的大小 从而达到整体控制的效果 */
+        }
+    </style>
+</head>
+<!-- 就是让屏幕的大小变化的时候 里面的元素的大小也跟着变化 
+rem相当于是em em是父元素字体的大小
+不同的rem是基准于html字体的大小-->
+<body>
+    <div><p></p></div>
+</body>
+</html>

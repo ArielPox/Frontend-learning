@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <script>
+        //1.兄弟节点 node.nextSibling 返回当元素的下一个节点 找不到就返回的是null 同样也包含元素节点还有文本节点的节点
+        var div = document.querySelector('div');
+
+        console.log(div.nextSibling);
+        console.log(div.previousSibling);
+        // 2.nextElementSibiling 可以得到的是兄弟元素节点 
+        console.log(div.nextElementSibling);
+        console.log(div.previousElementSibling);
+
+        // 3.以上的方法会有兼容性的问题 需要封装一个函数
+        function getNextElementSibling(element) {
+            var el = element;
+            while (el = el.nextSibling) {
+                if (el.nodeType === 1) {
+                    return el
+                }
+            }
+            return null;
+        }
+    </script>
+</body>
+
+</html>

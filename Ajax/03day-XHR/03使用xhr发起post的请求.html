@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. 创建一个xhp对象
+        let xhr = new XMLHttpRequest();
+
+        //2.调用open function
+        xhr.open('POST', 'http://www/liulongbin.top.3006./api/getbooks');
+
+        // 3.设置Content-Type属性 （固定的写法） 是由于发送到服务器的数据需要URL编码的 而get时候服务器返回的内容已经自动的解码
+        xhr.setRequestHeader('Conten-Type', 'application/x-www-form-urlencoded');
+
+        // 4.调用send函数同时数据以查询字符字符串的方式提交到服务器
+        xhr.send('bookname="西游记"&author:"吴承恩"&publisher:"天津出版社"');
+
+        // 5.监听事件
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status == 200) {
+                // 监听成功服务器响应成功就打印返回的数据
+                console.log(xhr.responseText);
+            }
+        }
+            /* 使用 Content-Type：
+
+发送 JSON 数据： 1.当你希望将 JavaScript 对象或数据以 JSON 格式发送给服务器时，
+需要设置 Content-Type 为 application/json。这通常用于传递结构化数据。
+2.发送表单数据： 如果要以表单形式发送数据，需要将 Content-Type 
+设置为 application/x-www-form-urlencoded。这种格式常用于传递简单的键值对数据。
+3.不使用 Content-Type：
+发送 FormData 数据： 当你希望上传文件或使用 FormData 对象发送表单数据时，
+浏览器会自动设置适当的 Content-Type。你不需要显式指定它，浏览器会处理这一切。
+*/
+    </script>
+</body>
+
+</html>

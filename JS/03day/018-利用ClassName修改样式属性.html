@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+
+        .change {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            font-size: 25px;
+            color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        // 1.用element.style的操作解决比较简单的样式
+        // 2.element.className类名样式操作 用于多样式的更改 className会直接覆盖以前的类名 解决的方法就是在className的后面直接加上空格加上以前的类名
+        // 2.1 获取元素
+        var div = document.querySelector('div');
+        div.onclick = function () {
+            div.className = 'change';
+        }
+    </script>
+</body>
+
+</html>

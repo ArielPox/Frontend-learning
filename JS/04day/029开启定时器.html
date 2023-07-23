@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function () {
+            var be = document.querySelector('.be');
+            var sto = document.querySelector('.sto');
+
+            var timer = null;
+            be.addEventListener('click', function () {
+                timer = setInterval(function () {
+                    console.log('计时')
+                }, 1000);
+            })
+
+            sto.addEventListener('click', function () {
+                clearInterval(timer);
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <button class="be">开始定时器</button>
+    <button class="sto">停止定时器</button>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+使用git log 可以显示提交的历史
+
+git log -n  n表示数字 显示最近的n条提交的历史
+
+在一行上显示最近提交的n条历史信息
+git log -n --pretty=oneline
+
+版本回退
+1.git log --pretty=oneline 展示左右的提交历史
+2.git reset --hard CommitID  根据指定的提交ID回退到指定的版本
+3.git reflog --pretty=oneline  在旧版本中查看操作命令的历史
+4.git reset --hard CommitID 再次更具最新的提交的ID跳转到新的版本上

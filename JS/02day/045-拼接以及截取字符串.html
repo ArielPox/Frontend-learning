@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.替换字符replace('被替换的字符','替换为的字符')他只会替换读一个字符
+        var str = 'anyandy';
+        console.log(str.replace('a', 'b'));
+        // 有个字符串'abcoefoxyozzopp' 要求吧里面的所有的替换成*
+        var str1 = 'abcoefoxyozzopp';
+        while (str.indexOf('o') !== -1) {
+            str1 = str1.replace('o', '*');
+        }
+        console.log(str1);
+        // 2.字符串转换为数组split('分隔符') 之前学的是join把数组为字符串
+        var str2 = 'red,pink,blue';
+        console.log(str2.split(','));
+        var str3 = 'red&pink&blue';
+        console.log(str3.split('&'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

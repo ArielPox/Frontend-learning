@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <script>
+        // js提供了三种方法call(),apply() bind()
+        // 1.call()主要的作用是实现继承
+
+        // call可以调用函数 还有改变函数里面this的指向问题 主要的作用是实现继承
+        function Father(uname, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        function Son(uname, age, sex) {
+            Father.call(this, uname, age, sex);
+        }
+        var son = new Son("刘德华", 12, "男");
+        console.log(son);
+
+        //2.apply(目标的this 参数的传递必须是一个伪数组) 也可以调用函数 主要的作用是比如利用apply借助于数学对象求数组的最大值
+        var arr = [1, 2, 3, 543, 11, 4];
+        var arr1 = Math.max.apply(Math, arr);
+        var arr2 = Math.min.apply(Math, arr);
+        console.log(arr1);
+        console.log(arr2);
+
+        // 3.bind()不会调用函数 这是绑定的意思 但是可以改变函数的this的指向返回的是原函数改变this之后的产生的新的函数
+
+        var o = {
+            name: "andy"
+        }
+
+        function fu(a, b) {
+            console.log(this);
+            console.log(a + b);
+        };
+        var f = fu.bind(o, 1, 2);
+        f();
+        // 使用场景：不需要立即调用函数但是又要改变函数的this的指向 比如一个按钮点击之后就会禁用三秒
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function() {
+                // 这里的this指向的是bths[i]
+                this.disabled = true;
+                setTimeout(function() {
+                    // 不用bind的话这里的this指向的是window
+                    this.disabled = false;
+                }.bind(this), 3000);
+            }
+        }
+    </script>
+</body>
+
+</html>

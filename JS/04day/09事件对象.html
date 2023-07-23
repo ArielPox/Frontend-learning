@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>事件对象</div>
+    <script>
+        // 1.event 就是一个事件对象 写到侦听函数的小括号里面 当做形参来看
+        // 2.事件对象只有在事件存在的情况下才会存在 她是系统自动的为我们创建的 不需要自己传递参数
+        // 3.时间对象实际上是事件一系列相关数据的合集
+        // 4.事件对象可以我们自己命名 比如event e
+        // 5.事件对象有兼容性的问题
+        var div=document.querySelector('div');
+        div.onclick=function(e)
+        {
+            console.log(e);
+        }
+    </script>
+</body>
+
+</html>

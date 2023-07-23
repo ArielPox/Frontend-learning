@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 每一个构造函数里面都会有一个原型对象prototype里面共享的不变的方法，大大的节约内存，但是原型对象还是被构造函数所拥有。
+公共使用的属性一般是定义到构造函数里面  -->
+
+<body>
+    <script>
+        // 构造函数创建一个对象
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log("这是一个唱歌的方法");
+            // }
+        }
+        // 不变的方法是定义到原型函数里面的
+        Star.prototype.sing = function() {
+            console.log("我会唱歌");
+        }
+
+        // 实例化对象
+        var ldh = new Star("张学友", 23);
+        var zxy = new Star("刘德华", 13);
+        ldh.sing();
+        zxy.sing();
+        console.log(ldh.sing() === zxy.sing());
+
+        //实例化对象都会有一个_proto_属性 指向的是prototype原型对象 这两者是等价的 _proto_的意义就是提供一条线让对象使用里面prototype的方法 但是在实际的开发中不是用这个属性 它只是内部指向原型对象
+    </script>
+</body>
+
+</html>

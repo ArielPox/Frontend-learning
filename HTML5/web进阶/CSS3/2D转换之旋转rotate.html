@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 120px;
+            /* 旋转45度 */
+            transform: rotate(45deg);
+            border: 3px solid green;
+            border-radius: 50%;
+            /* 过渡写在本身上 谁做动画给谁加 */
+            transition: all 0.5s;
+        }
+        
+        img:hover {
+            transform: rotate(360deg);
+        }
+        
+        .tangle {
+            position: relative;
+            width: 250px;
+            height: 35px;
+            border: 1px solid #000;
+        }
+        
+        .tangle::after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            height: 10px;
+            width: 10px;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+        }
+        
+        .tangle:hover::after {
+            transform: rotate(225deg);
+        }
+        /* 设置中心点 */
+        
+        .box {
+            height: 200px;
+            width: 200px;
+            margin: 200px auto;
+            transition: all 1s;
+            background-color: green;
+            /* 1可以更方位名词 比如左下角 
+            transform-origin: left bottom;*/
+            /* 2可以是像素 可以是百分比 */
+            transform-origin: 50px 50px;
+        }
+        
+        .box:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<!-- 指的是在二维的平面进行顺时针或者是逆时针旋转 语法：transform：rotate(××deg)角度为正的时候就是顺时针 为负的时候就是逆时针 默认的旋转中心是元素的中心点 -->
+
+<body><img src="images/rotate.png" alt="">
+    <!-- CSS三角的制作与旋转 -->
+    <div class="tangle"></div>
+    <!-- 设置转化的中心点 语法：transform-origin:X Y;
+    X Y 默认的值是元素的中心点（50% 50%）
+还可以设置方位名词（top bottom left center right）-->
+    <div class="box"></div>
+</body>
+
+</html>

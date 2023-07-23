@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择ul里面的第一个孩子 */
+        ul li:first-child {
+            background-color: aqua;
+        }
+
+        /* 选择ul里面的最后一个孩子 */
+        ul li:last-child {
+            background-color: pink;
+        }
+
+        /* 选择ul里面任意的孩子nth-child(n) */
+        ul li:nth-child(5) {
+            background-color: blueviolet;
+        }
+
+        /* nth-child(n)从0开始往后依次加一 
+        里面必须是n 只有一个n表示选中全部的孩子
+         如果是2n就是偶数 2n+1就是奇数 n+3就是从3开始包括第三个
+         -n+5就是前5个包括第五个*/
+        ol li:nth-child(2n+1) {
+            background-color: aquamarine;
+        }
+
+        /* nth-child(n)会先把第一个选择器子元素排序号 执行的时候先看：
+        nth-child(1)之后再去看“:”前面的选择器是否符合  由于第一个
+        子元素是p与div不一样 所以无法改色*/
+        section div:nth-child(1){
+            background-color: red;
+        }
+
+        /* nth-of-type(n) 会把指定的子元素排序
+        执行的时候看的是“：”前面的选择器指定的元素之后再去看是
+        第几个孩子 */
+        /* 比如下面将是第二个元素改色 */
+        section div:nth-of-type(1){
+            background-color: red;
+        }
+
+    </style>
+</head>
+<!-- nth-child中 n可以是数字，关键字和公式
+如果n是数字就是选择第几个子元素里面的数字从1开始
+n可以是关键字even是偶数 odd是奇数 
+还可以是公式 -->
+
+<body>
+    <ul>
+        <Li>我是第个1孩子</Li>
+        <Li>我是第2个孩子</Li>
+        <Li>我是第3个孩子</Li>
+        <Li>我是第4个孩子</Li>
+        <Li>我是第5个孩子</Li>
+        <Li>我是第6个孩子</Li>
+        <Li>我是第7个孩子</Li>
+        <Li>我是第8个孩子</Li>
+    </ul>
+
+    <ol>
+        <Li>我是第个1孩子</Li>
+        <Li>我是第2个孩子</Li>
+        <Li>我是第3个孩子</Li>
+        <Li>我是第4个孩子</Li>
+        <Li>我是第5个孩子</Li>
+        <Li>我是第6个孩子</Li>
+        <Li>我是第7个孩子</Li>
+        <Li>我是第8个孩子</Li>
+    </ol>
+    <section>
+        <p>地球</p>
+        <div>月球</div>
+        <div>火星</div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+
+        Star.prototype = {
+            // 如果我们修该了之前的原型对象，给原型对象赋值的就是一个对象，就必须手动的利用constructor指回之前的构造函数
+            constructor: Star,
+            sing: function() {
+                console.log("唱歌");
+            },
+            dance: function() {
+                console.log("我会跳舞");
+            }
+        }
+
+        var ldh = new Star("刘德华", 12);
+        var zxy = new Star("张学友", 23);
+        console.log(ldh);
+        console.log(Star.prototype);
+        console.log(Star.constructor);
+        console.log(ldh.prototype);
+        //构造函数 实例 原型对象之间的三角形关系 1.Star构造函数通过Star.prototype指向Star的原型对象prototype；2.原型对象.constructor指回Star的构造函数 3.实例化对象通过ldh._proto_指向Star原型对象prototype
+    </script>
+</body>
+
+</html>

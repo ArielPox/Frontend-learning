@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=z, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 所有的函数都是Function的实例(对象) 函数也属于对象
+        // 调用的方式
+        // 1.普通函数 this指向是window
+        function fu() {
+            console.log("函数的调用");
+        }
+        fu();
+        // 或者是fu.call()
+        //2.对象的方法this的指向是对象O
+        var o = {
+            sayHi: function() {
+                console.log("函数调用")
+            }
+        }
+        o.sayHi();
+        //3构造函数的方法 this 指向的是实例对象
+        function Star() {};
+        new Star();
+        //4.绑定事件函数 this指向的是btn
+        // btn.onclick = function() {}点击之后就可以调用这个函数
+        //5.定时器函数 this指向的是window
+        // setInterval(function() {}, 1000);这个函数会每一秒调用一次
+        //6.立即执行函数 这个会自动的调用 this指向的是window
+        (function() {
+            console.log("立即执行函数的方法");
+        })
+    </script>
+</body>
+
+</html>

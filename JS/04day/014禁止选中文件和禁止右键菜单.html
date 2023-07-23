@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    这个是不愿意分享的文字
+    <script>
+        // 1.contextmeun就是菜单的意思
+        document.addEventListener('contextmeun', function (e) {
+            e.preventDefault();
+        })
+        // 2.禁止选中中文selectstart
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+
+    </script>
+</body>
+
+</html>

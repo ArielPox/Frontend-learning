@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 单独使用时候 前置递增与后置递增没有区别 在算术运算里面有区别
+
+        var num=1;
+        num++;//后置递增num=num+1 
+        console.log(num+++10);//先返回原值后自加一
+        console.log(num);
+        ++num;//前置递增num=num+1 先自加一 后返回值
+        console.log(++num+10);
+
+        // 也是同上面的一样的原理
+        num--;//后置递减
+        console.log(num);
+        --num;//前置递减
+        console.log(num);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

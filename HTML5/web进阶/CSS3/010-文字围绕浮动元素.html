@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 70px;
+            background-color: green;
+            margin: 0 auto;
+        }
+
+        .pic {
+            vertical-align: middle;
+            float: left;
+            width: 120px;
+            height: 60px;
+            margin: 5px;
+        }
+
+        .pic img {
+
+            width: 100%;
+            height: 100%;
+        }
+
+        p {
+            white-space: normal;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<!-- 文字会环绕浮动元素 -->
+
+<body>
+    <div class="box">
+        <div class="pic">
+            <img src="images/xlz.png" alt="">
+        </div>
+        <p>如今，与“衣”相关的纺织业，正大踏步向绿色转型升级迈进。从能够大幅减少水污染的无水染色技术，到利用废旧塑料瓶、废旧衣物制作的再生纤维，再到性能优异的碳纤维材料，一项项创新技术，带领纺织业跨入绿色低碳发展新阶段。</p>
+    </div>
+</body>
+
+</html>

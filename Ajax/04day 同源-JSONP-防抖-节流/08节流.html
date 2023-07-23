@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    #angel {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <img src="./angel.gif" alt="" id="angel">
+    <!-- 节流：减少一段事件内事件被触发的次数 
+    使用的场景：鼠标不断的触发某个事件 懒加载时候要监听滚动条的位置  -->
+    <script>
+        // 不使用节流方式实现鼠标的跟随效果
+        /* $(function () {
+            // 获取图片元素
+            let angel = $("#angel");
+            // 监听鼠标的mousemove事件
+            let count = 0;
+            $(document).on('mousemove', function (e) {
+                // 设置图片的位置
+                $(angel).css('left', e.pageX + 'px').css('top', e.pageY + 'px');
+                count += 1;
+                console.log("触发次数" + count);
+            })
+        }) */
+
+        // 使用节流阀实现鼠标跟随效果 减少鼠标移动事件的调用次数
+        $(function () {
+            // 获取图片
+            let angel = $("#angel");
+
+            // 定义节流阀
+            let timer = null;
+
+            // 绑定mousemove事件
+            let count = 0;
+            $(document).on('mousemove', function (e) {
+                // 假如节流阀是否为空不是0事件还在发生中 直接退出
+                if (timer) {
+                    return;
+                }
+                // 开启延时器
+                timer = setTimeout(function () {
+                    $(angel).css('left', e.pageX + 'px').css('top', e.pageY + 'px');
+                    console.log("ok");
+                    timer = null;
+                }, 20);
+            });
+        })
+    </script>
+</body>
+
+</html>

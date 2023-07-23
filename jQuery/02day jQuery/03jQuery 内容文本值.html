@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/JQuery.min.js"></script>
+</head>
+
+<body>
+    <div><span>我是内容</span></div>
+    <input type="text" name="" id="" value="请输入内容">
+    <script>
+        // 1.获取设置元素的内容相当于原生的js中的inner HTML html()
+        console.log($("div").html());
+        //还可以修改里面的值$("div").html("123");
+        // 2.获取元素的文本内容相当于原生的innerTeXT
+        console.log($("div").text());
+        $("div").text("123");
+
+        // 3.获取设置表单 val()
+        console.log($("input").val());
+        $("input").val("123");
+    </script>
+</body>
+
+</html>

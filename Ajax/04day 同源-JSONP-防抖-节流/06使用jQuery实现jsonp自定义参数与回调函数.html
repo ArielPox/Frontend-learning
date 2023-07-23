@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <script>
+        // tip: 在默认的情况下jQuery发起jsonp请求会自动的携带一个callback = Jqueryxxx的参数 是随机生成的一个回调函数的名称
+        $.ajax({
+            url: 'http://ajax-base-api-t.itheima.net/api/jsonp?callback=abc&name=ls&age=30',
+            // 必须要有dataType:'jsonp'
+            dataType: 'jsonp',
+            // 自定义回调函数的名称
+            jsonp: 'callback',
+            jsonpCallback: 'abc',
+            success: function (res) {
+                console.log(res)
+            }
+        })
+    </script>
+</body>
+
+</html>
