@@ -1,0 +1,1 @@
+module.exports.name = ("lihua"); //向外面暴露成员name 让外界可以使用

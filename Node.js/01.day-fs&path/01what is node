@@ -1,0 +1,3 @@
+node.js是一种基于Chrome V8的js后端运行环境
+浏览器是js的前端运行环境
+node.js不能调用DOM BOM等浏览器的内置的api
