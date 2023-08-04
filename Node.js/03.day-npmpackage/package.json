@@ -1,0 +1,8 @@
+{
+  "description": "",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "jquery": "^3.7.0",
+    "moment": "^2.29.4"
+  }
+}
