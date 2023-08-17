@@ -5,7 +5,7 @@ const qs = require('querystring');
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: false }));
 
 
 // 解析表单数据的中间件

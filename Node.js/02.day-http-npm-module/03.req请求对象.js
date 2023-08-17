@@ -9,7 +9,7 @@ const server = http.createServer();
 server.on('request', req => {
     const url = req.url;
     const method = req.method;
-    console.log('your request url is ' + url + 'and your request methos i' + method + '');
+    console.log('your request url is ' + url + 'and your request method is' + method + '');
 
 })
 

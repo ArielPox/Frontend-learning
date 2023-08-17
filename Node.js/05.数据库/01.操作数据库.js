@@ -1,5 +1,5 @@
 // 导入数据库
-const mysql = require('mysql2')
+const mysql = require('mysql2');
 
 // 建立与数据库的联系
 const db = mysql.createPool({

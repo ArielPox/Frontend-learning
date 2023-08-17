@@ -10,10 +10,10 @@ const db = mysql.createPool({
 })
 
 // 测试是否可以正常的工作
-db.query('select * from users', (err, results) => {
+db.query('select * from ev_user', (err, results) => {
     if (err) {
         console.log(err.message + "123");
     }
 
-    console.log(results);
+    console.log(...results);
 })
